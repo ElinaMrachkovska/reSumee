@@ -22,7 +22,7 @@ var footer = {
       href: 'mailto:dmytro@mail.com',
     },
     phone: {
-      text: '+380670000123',
+      text: '+3806700001233',
       href: 'tel:+380670000123',
     },
     linkedin: {
