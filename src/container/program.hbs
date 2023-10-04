@@ -1,47 +1,43 @@
-
-   {{#with program}}
+{{#with excursion}}
+ <h1>Program</h1>
    <div>
-    <h1>Program</h1>
-         <div>
-            {{#each excursion}}
-            {{name}}
-            <br> 
-             {{#each location}}
-             {{city}}<br>
-             {{country}}<br>
-             {{/each}}
-             {{date}}<br>
-             {{#each program}}<br>
-             {{name}}<br>
-             {{type}}<br>
-             {{duration}}<br>
-             {{/each}}
-             {{#each details}}<br>
-              {{#each museum}}<br>
-             {{name}}<br>
-             {{#each location}}<br>
-             {{address}}<br>
-             {{city}}<br>
-             {{country}}<br>
-             {{/each}}
-             {{#each exhibits}}
-             {{name}}<br>
-             {{artist}}<br>
-             {{description}}<br>
-           {{audio_guide}}
-            {{/each}}
-            {{/each}}
-             {{/each}}
-         </div>
-         <div>
-            {{#each guide}}<br>
-             {{name}}<br>
-             {{language}}<br>
-             {{rating}}<br>
-             {{/each}}
-           
-           {{/each}}
-           </div>
-      {{/with}}
-       
-   
+      {{name}}<br>
+     {{#with location}}
+       {{city}}<br>
+       {{country}}<br>
+       {{#if location}}
+       {{city}}<br>
+       {{country}}<br>
+       {{/if}}
+     {{/with}}
+        {{date}}<br>
+    </div>
+ <hr>
+ {{#each program}}
+    {{name}}<br>
+      {{type}}<br>
+      {{duration}}<br>
+{{/each}}
+   {{#with details}}
+        {{#with museum}}
+          {{name}}<br>
+          {{#with location}}
+            {{address}}<br>
+            {{city}}<br>
+            {{country}}<br>
+          {{/with}}
+        {{/with}}
+   {{/with}}
+          {{#each exhibits}}
+            {{name}}<br>
+            {{artist}}<br>
+            {{description}}<br>
+            {{audio_guide}}
+          {{/each}}
+{{#with guide}}
+  {{name}}<br>
+  {{language}}<br>
+  {{rating}}<br>
+{{/with}}
+</div>
+{{/with}}
