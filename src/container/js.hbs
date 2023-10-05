@@ -1,0 +1,49 @@
+ <h1 style="color:rgb(58, 6, 245)">JS</h1>
+   <div>
+      <h3  style="color:rgb(8, 85, 90)">{{name}}</h3>
+         <i><strong>{{description}}</strong></i><br>
+      </div>  
+         <hr>
+    <div> 
+      
+         {{#with history}}
+          {{year}}<br>
+         {{founder}}<br>
+         {{/with}}
+     </div>
+      <hr>
+           {{#each types}}<br>
+           {{/each}}
+              
+          <hr>
+          <div>
+            {{#each syntax}} 
+            {{#each variables}}<br> {{/each}}
+            {{#each functions}}<br> {{/each}}
+            {{#each conditionals}}<br> {{/each}}
+            {{#each loops}} <br>{{/each}}
+            {{#each classes}}<br> {{/each}}
+            {{/each}}
+      </div>
+      <hr>
+      <div>
+          <ul> {{#each features}} 
+            <li></li>
+            {{/each}}</ul>
+      </div>
+      <ul> {{#each libraries}} 
+            <li></li>
+            {{/each}}</ul>
+                         {{#each tools}} <ul>
+                           <li></li>
+           </ul> {{/each}}
+   <div>{{#each community}}
+      <ul> 
+           <li> {{name}}</li>
+            {{type}} 
+            </ul>
+         {{/each}}
+            </div>
+           
+
+      

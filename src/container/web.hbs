@@ -1,65 +1,54 @@
-
  <h1 style="color:brown">Web</h1>
    <div>
      {{#with web}}
-     {{#each languages}}
-      <h3  style="color:rgb(255, 102, 0)">{{name}}</h3>
-      <i><strong>{{version}}</strong></i><br>
-       <i>{{description}}</i>
-       
-       <div><ul>
-       {{#each elements}}
-      <li> {{name}}</li>
-    <i>{{description}}</i>
+       {{#each languages}}
+         <h3  style="color:rgb(255, 102, 0)">{{name}}</h3>
+         <i><strong>{{version}}</strong></i><br>
+         <i>{{description}}</i>
+    <div> 
+       <ul>
+         {{#each elements}}
+         <li> {{name}}</li>
+         <i>{{description}}</i>
+      <hr>
+           {{#each attributes}}
+           <li>{{name}}</li>
+           <i>{{description}}</i>
+      <hr>
+           {{/each}}
+         {{/each}}
+       </ul>
+    </div>
+      <div>
+       <ul>
+           {{#each properties}}
+           <li> {{name}}</li>
+           <i>{{description}}</i>
      <hr>
-
-    {{#each attributes}}
-<li>{{name}}</li>
+              {{#each values}}
+             <li>{{value}} </li>
        <i>{{description}}</i>
        <hr>
-      {{/each}}
+              {{/each}}
+           {{/each}}
+       </ul>
+      </div>
+        <div>
+         <ul>
+        {{#each functions}}
+         <li> {{name}}</li>
+         <i>{{description}}</i>
+     <hr>
+     
+           {{#each parameters}}
+           <li> {{name}}</li>
+           {{type}}<br>
+           {{description}}
+     <hr>
+           {{/each}}
         {{/each}}
         </ul>
-          </div>
-             <div><ul>
-       {{#each properties}}
-      <li> {{name}}</li>
-   <i>{{description}}</i>
-    <hr>
- {{#each values}}
-        <li>{{value}} </li>
-       <i>{{description}}</i>
-       <hr>
-       {{/each}}
-       {{/each}}
-       </ul>
-       </div>
-     
-       <div>
-         <ul>
-                  {{#each functions}}
-                
-       
-<li> {{name}}</li>
-     <i>{{description}}</i>
-  <hr>
-     
-     {{#each parameters}}
-         <li> {{name}}</li>
-       {{type}}<br>
-     {{description}}
-     <hr>
-     {{/each}}
-     
-     {{/each}}
-</ul>
        </div>
      {{/each}}
-     {{/with}}
-     </div>
-
-
-         
-      
-       
- 
+   {{/with}}
+  </div> 
