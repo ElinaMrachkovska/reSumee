@@ -5,38 +5,63 @@
       </div>  
          <hr>
     <div> 
-      
-         {{#with history}}
-          {{year}}<br>
-         {{founder}}<br>
-         {{/with}}
+     <h2 style="color:rgb(68, 15, 212)">History</h2>
+         <div class="grid gap-3">{{#with history}}
+    <div class="p-2 g-col-6">{{year}}</div>
+  <div class="p-2 g-col-6">{{founder}}</div>
+ {{/with}}
+  </div>
+         
      </div>
       <hr>
-           {{#each types}}<br>
-           {{/each}}
-              
+     
+             {{#each types}}
+             <ul>
+               <li class="p-2 g-col-6">{{this}}</li>
+             </ul>
+             {{/each}}
+                       
           <hr>
           <div>
-            {{#each syntax}} 
-            {{#each variables}}<br> {{/each}}
-            {{#each functions}}<br> {{/each}}
-            {{#each conditionals}}<br> {{/each}}
-            {{#each loops}} <br>{{/each}}
-            {{#each classes}}<br> {{/each}}
-            {{/each}}
+            {{#with syntax}} 
+             {{#each variables}}
+             <ul>
+               <li>{{this}}</li>
+             </ul>
+             {{/each}}
+             {{#each functions}}
+             <ul>
+               <li>{{this}}</li>
+             {{/each}}
+               {{#each conditionals}}
+               <li>{{this}}</li>
+               {{/each}}
+             {{#each loops}}
+               <li>{{this}}</li>
+             {{/each}}
+            {{#each classes}}
+               <li>{{this}}</li>
+             </ul>
+              {{/each}}
+            {{/with}}
       </div>
       <hr>
       <div>
-          <ul> {{#each features}} 
-            <li></li>
-            {{/each}}</ul>
+         {{#each features}} 
+            <ul>
+               <li>{{this}}</li>
+             </ul>
+            {{/each}}
       </div>
-      <ul> {{#each libraries}} 
-            <li></li>
-            {{/each}}</ul>
-                         {{#each tools}} <ul>
-                           <li></li>
-           </ul> {{/each}}
+         {{#each libraries}} 
+           <ul>
+               <li>{{this}}</li>
+             </ul>
+            {{/each}}
+          {{#each tools}} <ul>
+               <li>{{this}}</li>
+             </ul>
+            {{/each}}
    <div>{{#each community}}
       <ul> 
            <li> {{name}}</li>
