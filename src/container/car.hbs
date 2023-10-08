@@ -1,0 +1,108 @@
+ <h1>Car</h1>
+   <div>
+      {{make}}<br>
+      {{model}}<br>
+      {{year}}<br>
+      {{color}}<br>
+      <h3>FEATURES</h3>
+     {{#each features}}
+     <i><b>Interior</b></i>
+      {{#each interior}}<br>
+      <span style="border: 1px solid red">Seats</span>
+      {{#each seats}}<br>
+      {{material}}<br>
+      {{color}}<br>
+      {{heated}}<br>
+      {{ventilated}}<br>
+      {{/each}}
+      
+     <span style="border: 1px solid red">Dashboard</span>
+      {{#each dashboard}}<br>
+      {{material}}<br>
+      {{color}}<br>
+      {{/each}}
+<span style="border: 1px solid red">Display</span>
+      {{#each display}}<br>
+      {{type}}<br>
+       {{size}}
+       {{resolution}}<br>
+       {{touchscreen}}<br>
+        {{/each}}
+        <span style="border: 1px solid red">Audio</span>
+     {{#each audio}}<br>
+      {{system}}<br>
+       {{subwoofer}}<br>
+       {{bluetooth}}<br>
+       {{USB}}<br>
+       {{/each}}
+       {{/each}}
+       {{/each}}
+
+<i><b>Exterior</b></i>
+{{#with exterior}}<br>
+      {{#each wheels}}<br>
+      {{size}}<br>
+      {{type}}<br>
+      {{color}}<br>
+      {{/each}}
+      {{#each headlights}}<br>
+      {{type}}<br>
+      {{brightness}}<br>
+      {{automatic}}<br>
+      {{/each}}
+      {{#each sunroof}}<br>
+      {{type}}<br>
+       {{size}}
+       {{automatic}}<br>
+       {{/each}}
+     {{/with}}
+     <i><b>Safety</b></i>
+     {{#with safety}}<br>
+     {{#each airbags}}<br>
+     {{front}}<br>
+       {{side}}<br>
+      {{knee}}<br>
+       {{rear}}<br>
+        {{/each}}
+           {{#each assistance}}<br>
+     {{blind_spot_monitoring}}<br>
+       {{rear_cross_traffic_alert:}}<br>
+      {{lane_departure_warning:}}<br>
+       {{adaptive_cruise_control}}<br>
+       {{collision_warning}}<br>
+        {{/each}}
+ {{/with}}
+<i><b>Engine</b></i>
+   {{#with engine}}
+      {{type}}<br>
+      {{displacement}}<br>
+      {{horsepower}}<br>
+      {{torque}}<br>
+      <p>Transmission</p>
+     {{#each transmission}}
+      {{type}}<br>
+       {{gears}}<br>
+     {{/each}}
+     {{/with}}
+     <i><b>Fuel economy</b></i>
+     {{#each fuel_economy}}
+      {{city}}<br>
+      {{highway}}<br>
+      {{combined}}<br>
+      {{/each}}
+   
+    {{#with price}}
+    {{base}}<br>
+           {{destination}}<br>
+            
+      {{#each options}}
+        {{navigation}}<br>
+        {{moonroof}}<br>
+        {{premium_paint}}<br>
+      {{/each}}
+      {{total}}<br>
+     {{/with}}
+    
+
+     
+       
