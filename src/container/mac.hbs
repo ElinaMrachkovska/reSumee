@@ -41,17 +41,13 @@
          {{/with}}
      </ul>
               <i><strong>Ports</strong></i><br>
-     <ul>{{#with ports}}
+     {{#each ports}}
         <li>{{type}}</li>
-        <li>{{count}}</li>
-         {{#each features}}
-        <ol>
-          <li>{{this}}</li>
-        </ol>
-      {{/each}}
-        <li>{{type}}</li>
-        <li>{{count}}</li>
-         {{/with}}
+        {{count}}<br>
+        {{#with features}}
+       <i>{{this}}</i>
+        {{/with}}
+    {{/each}}
      </ul>
       <i><strong>Battery</strong></i><br>
      <ul>{{#with battery}}
