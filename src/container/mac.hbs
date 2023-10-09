@@ -17,7 +17,7 @@
         {{/with}}
       </ul> 
       <i><strong>Memory</strong></i><br>
-     <ul>{{#with processor}}
+     <ul>{{#with memory}}
         <li>{{type}}</li>
         <li>{{size}}</li>
         <li>{{speed}}</li>
@@ -44,19 +44,23 @@
      <ul>{{#with ports}}
         <li>{{type}}</li>
         <li>{{count}}</li>
-        <li>{{features}}{{this}}</li>
+         {{#each features}}
+        <ol>
+          <li>{{this}}</li>
+        </ol>
+      {{/each}}
         <li>{{type}}</li>
         <li>{{count}}</li>
          {{/with}}
      </ul>
-      <i><strong>battery</strong></i><br>
+      <i><strong>Battery</strong></i><br>
      <ul>{{#with battery}}
         <li>{{type}}</li>
         <li>{{capacity}}</li>
         <li>{{life}}</li>
          {{/with}}
      </ul>
-       {{weight}}
+       {{weight}}<br>
         <i><strong>Dimensions</strong></i><br>
      <ul>{{#with dimensions}}
          <li>{{height}}</li>
@@ -65,10 +69,10 @@
          {{/with}}
      </ul>
      <i><strong>Operating_system</strong></i><br>
-    {{operating_system}}
+    {{operating_system}}<br>
      <i><strong>Accessories</strong></i><br>
             {{#each accessories}}
-           <b>{{name}}</b>
-           <i>{{price}}</i>
+           <b style="color: rgb(92, 15, 28)">{{name}}</b><br>
+           <i>{{price}}</i><br>
              {{/each}}
        {{/with}}
