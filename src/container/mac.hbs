@@ -1,0 +1,78 @@
+ <h1 style="color:brown">Mac</h1>
+   <div>
+    {{name}}<br>
+    {{description}}<br>
+    {{price}}<br>
+    {{category}}<br>
+    </div>
+  <h3  style="color:rgb(255, 102, 0)">Features</h3>
+    {{#with features}}<br>
+    <i><strong>Processor</strong></i><br>
+      <ul>{{#with processor}}
+        <li>{{brand}}</li>
+        <li>{{model}}</li>
+        <li>{{speed}}</li>
+        <li>{{cores}}</li>
+        <li>{{cache}}</li>
+        {{/with}}
+      </ul> 
+      <i><strong>Memory</strong></i><br>
+     <ul>{{#with memory}}
+        <li>{{type}}</li>
+        <li>{{size}}</li>
+        <li>{{speed}}</li>
+         {{/with}}
+      </ul>
+        <i><strong>Display</strong></i><br>
+      <ul>{{#with display}}
+        <li>{{size}}</li>
+        <li>{{resolution}}</li>
+        <li>{{technology}}</li>
+        <li>{{color_space}}</li>
+        <li>{{brightness}}</li>
+         <li>{{refresh_rate}}</li>
+        {{/with}}
+      </ul> 
+        <i><strong>Graphics</strong></i><br>
+     <ul>{{#with graphics}}
+        <li>{{brand}}</li>
+        <li>{{model}}</li>
+        <li>{{memory}}</li>
+         {{/with}}
+     </ul>
+              <i><strong>Ports</strong></i><br>
+     <ul>{{#with ports}}
+        <li>{{type}}</li>
+        <li>{{count}}</li>
+         {{#each features}}
+        <ol>
+          <li>{{this}}</li>
+        </ol>
+      {{/each}}
+        <li>{{type}}</li>
+        <li>{{count}}</li>
+         {{/with}}
+     </ul>
+      <i><strong>Battery</strong></i><br>
+     <ul>{{#with battery}}
+        <li>{{type}}</li>
+        <li>{{capacity}}</li>
+        <li>{{life}}</li>
+         {{/with}}
+     </ul>
+       {{weight}}<br>
+        <i><strong>Dimensions</strong></i><br>
+     <ul>{{#with dimensions}}
+         <li>{{height}}</li>
+         <li>{{width}}</li>
+         <li>{{depth}}</li>
+         {{/with}}
+     </ul>
+     <i><strong>Operating_system</strong></i><br>
+    {{operating_system}}<br>
+     <i><strong>Accessories</strong></i><br>
+            {{#each accessories}}
+           <b style="color: rgb(92, 15, 28)">{{name}}</b><br>
+           <i>{{price}}</i><br>
+             {{/each}}
+       {{/with}}
