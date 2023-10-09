@@ -2,43 +2,51 @@
    <div>
       <h3  style="color:rgb(8, 85, 90)">{{name}}</h3>
          <i><strong>{{description}}</strong></i><br>
-      </div>  
-         <hr>
-    <div> 
-     <h2 style="color:rgb(68, 15, 212)">History</h2>
-         <div class="grid gap-3">{{#with history}}
-    <div class="p-2 g-col-6">{{year}}</div>
-  <div class="p-2 g-col-6">{{founder}}</div>
- {{/with}}
-  </div>
-         
-     </div>
+  </div>  
       <hr>
-     
-             {{#each types}}
-             <ul>
-               <li class="p-2 g-col-6">{{this}}</li>
-             </ul>
-             {{/each}}
-                       
+   <div> 
+     <h2 style="color:rgb(68, 15, 212)">History</h2>
+   <div >{{#with history}}
+    {{year}}<br>
+    {{founder}}
+    {{/with}}
+     </div>
+    </div>
           <hr>
-          <div>
-            {{#with syntax}} 
-             {{#each variables}}
+      <h3 style="color:rgb(16, 44, 3)">Types</h3>
+      {{#each types}}
+        <ul>
+          <li>{{this}}</li>
+        </ul>
+      {{/each}}
+        <hr>
+    <div>
+     <h3 style="color:rgb(89, 119, 6)">Syntax</h3> 
+      {{#with syntax}} 
+      <h3 style="color:rgb(78, 15, 160)">Variables</h3>
+        {{#each variables}}
              <ul>
                <li>{{this}}</li>
              </ul>
              {{/each}}
+             <hr>
+             <h3 style="color:rgb(204, 25, 180)">Functions</h3>
              {{#each functions}}
              <ul>
                <li>{{this}}</li>
              {{/each}}
+             <hr>
+             <h3 style="color:rgb(198, 211, 12)">Conditionals</h3>
                {{#each conditionals}}
                <li>{{this}}</li>
                {{/each}}
+               <hr>
+               <h3 style="color:rgb(216, 133, 8)">Loops</h3>
              {{#each loops}}
                <li>{{this}}</li>
              {{/each}}
+             <hr>
+             <h3 style="color:rgb(74, 216, 8)">Classes</h3>
             {{#each classes}}
                <li>{{this}}</li>
              </ul>
@@ -47,28 +55,32 @@
       </div>
       <hr>
       <div>
+        <h3 style="color:rgb(65, 6, 30)">Features</h3>
          {{#each features}} 
             <ul>
                <li>{{this}}</li>
              </ul>
-            {{/each}}
+          {{/each}}
       </div>
+      <hr>
+      <h3 style="color:rgb(171, 216, 8)">Libraries</h3>
          {{#each libraries}} 
            <ul>
                <li>{{this}}</li>
              </ul>
-            {{/each}}
+         {{/each}}
+         <hr>
+         <h3 style="color:rgb(39, 8, 216)">Tools</h3>
           {{#each tools}} <ul>
                <li>{{this}}</li>
              </ul>
-            {{/each}}
+          {{/each}}
+          <hr>
+          <h3 style="color:rgb(216, 32, 8)">community</h3>
    <div>{{#each community}}
       <ul> 
            <li> {{name}}</li>
             {{type}} 
             </ul>
          {{/each}}
-            </div>
-           
-
-      
+            </div> 
