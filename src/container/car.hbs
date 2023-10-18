@@ -1,109 +1,109 @@
  <h1>Car</h1>
-   <div>
-      {{make}}<br>
+   <div><ul>
+      <li>{{make}}</li>
       {{model}}<br>
       {{year}}<br>
-      {{color}}<br>
+      {{color}} <br>
       <h3>FEATURES</h3>
-     {{#with features}}
-     <i><b>Interior</b></i>
-      {{#with interior}}<br>
+    <ul> {{#with features}}
+     <b>Interior</b>
+     <ul>{{#with interior}}<br>
       <span style="border: 1px solid red">Seats</span>
-      {{#with seats}}<br>
-      {{material}}<br>
-      {{color}}<br>
-      {{heated}}<br>
-      {{ventilated}}<br>
-      {{/with}}
+     <ul> {{#with seats}}<br>
+      <li>{{material}}</li>
+       <li>{{color}}</li>
+      <li>{{heated}}</li>
+       <li>{{ventilated}}</li>
+      {{/with}}</ul> 
       
      <span style="border: 1px solid red">Dashboard</span>
-      {{#with dashboard}}<br>
-      {{material}}<br>
-      {{color}}<br>
+     <ul>  {{#with dashboard}}<br>
+      <li>{{material}}</li>
+     <li> {{color}}</li></ul> 
       <span style="border: 1px solid red">Display</span>
       <br>
-      {{#with display}}<br>
-      {{type}}<br>
-       {{size}}<br>
-       {{resolution}}<br>
-       {{touchscreen}}<br>
-        {{/with}}
+     <ul>  {{#with display}}<br>
+      <li>{{type}}</li>
+      <li> {{size}}</li>
+       <li>{{resolution}}</li>
+       <li>{{touchscreen}}</li>
+        {{/with}}</ul> 
         {{/with}}
         <span style="border: 1px solid red">Audio</span>
-     {{#with audio}}<br>
-      {{system}}<br>
-       {{subwoofer}}<br>
-       {{bluetooth}}<br>
-       {{USB}}<br>
-       {{/with}}
-       {{/with}}
+    <ul>  {{#with audio}}<br>
+      <li>{{system}}</li><br>
+      <li> {{subwoofer}}</li>
+      <li> {{bluetooth}}</li>
+      <li> {{USB}}</li><br>
+       {{/with}}</ul> 
+       {{/with}}</ul> 
        {{/with}}
 
-<i><b>Exterior</b></i><br>
-{{#with exterior}}
-      {{#each wheels}}<br>
-      {{size}}<br>
-      {{type}}<br>
-      {{color}}<br>
-      {{/each}}
-      {{#each headlights}}<br>
-      {{type}}<br>
-      {{brightness}}<br>
-      {{automatic}}<br>
-      {{/each}}
-      {{#each sunroof}}<br>
-      {{type}}<br>
-       {{size}}
-       {{automatic}}<br>
-       {{/each}}
+<b>Exterior</b><br>
+<ul> {{#with exterior}}
+  <i><b>Wheels</b></i><br>
+     <ul>{{#with wheels}}<br>
+      <li>{{size}}</li>
+     <li> {{type}}</li>
+     <li> {{color}}</li>
      {{/with}}
+    <ul>  {{#with headlights}}<br>
+      </li>{{type}}</li><br>
+      </li>{{brightness}}</li><br>
+     </li> {{automatic}}</li><br>
+      {{/with}}</ul> 
+      <ul> {{#with sunroof}}<br>
+      </li>{{type}}</li><br>
+      </li> {{size}}</li>
+       </li>{{automatic}}</li><br>
+       {{/with}}</ul> 
+     {{/with}}</ul> 
      <i><b>Safety</b></i><br>
-     {{#with safety}}<br>
-     {{#each airbags}}<br>
-     {{front}}<br>
-       {{side}}<br>
-      {{knee}}<br>
-       {{rear}}<br>
-        {{/each}}
-           {{#each assistance}}<br>
-     {{blind_spot_monitoring}}<br>
-       {{rear_cross_traffic_alert}}<br>
-      {{lane_departure_warning}}<br>
-       {{adaptive_cruise_control}}<br>
-       {{collision_warning}}<br>
-        {{/each}}
- {{/with}}
-<i><b>Engine</b></i><br>
-   {{#with engine}}
+    <ul>  {{#with safety}}<br>
+     <b>Airbags</b><br>
+     <ul> {{#with airbags}}<br>
+    </li> {{front}}<br>
+     </li>  {{side}}<br>
+     </li> {{knee}}<br>
+      </li> {{rear}}<br>
+        {{/with}}</ul> </ul> 
+        <b>Аssistance</b><br>
+         <ul>   {{#with assistance}}<br>
+     </li>{{ blind_spot_monitoring }} <br>
+    </li>  {{rear_cross_traffic_alert}}<br>
+     </li> {{lane_departure_warning}}<br>
+     </li>  {{adaptive_cruise_control}}<br>
+      </li> {{collision_warning}}<br>
+        {{/with}}</ul> 
+ {{/with}}</ul></ul>
+<i><b>ENGINE</b></i><br>
+   <ul> {{#with engine}}
       {{type}}<br>
       {{displacement}}<br>
       {{horsepower}}<br>
       {{torque}}<br>
   <i><b>Transmission</b></i><br>
-     {{#each transmission}}{{this}}
+    <ul>  {{#with transmission}}
       {{type}}<br>
        {{gears}}<br>
-     {{/each}}
-     {{/with}}
+     {{/with}}</ul> 
+     {{/with}}</ul> 
      <i><b>Fuel economy</b></i><br>
-     {{#with fuel_economy}}
+    <ul>  {{#with fuel_economy}}
       {{city}}<br>
       {{highway}}<br>
       {{combined}}<br>
-      {{/with}}
+      {{/with}}</ul> 
    <i><b>Price</b></i><br>
-    {{#with price}}
+   <ul>  {{#with price}}
     {{base}}<br>
            {{destination}}<br>
             <i><b>Options</b></i><br>
-      {{#with options}}
+     <ul>  {{#with options}}
         {{navigation}}<br>
         {{moonroof}}<br>
         {{premium_paint}}<br>
-      {{/with}}
+      {{/with}}</ul> 
      <span style="color: rgb(158, 47, 19); border: 1px solid green; font-size: 20px"> {{total}}</span> <br>
-     {{/with}}
-    
-
-     
+     {{/with}}</ul>    
        
