@@ -1,52 +1,48 @@
  <h1 style="color:rgb(235, 11, 11)">{{name}}</h1>
   
-    
-    <h2  style="color:rgb(255, 102, 0)">Users</h2>
+        <h2  style="color:rgb(255, 102, 0)">Users</h2>
    <ul>{{#each users}}<br>
-    {{id}}<br>
-    {{name}}<br>
-    {{gender}}<br>
-    {{age}}<br>
+          {{id}}<br>
+          {{name}}<br>
+          {{gender}}<br>
+          {{age}}<br>
     <h3  style="color:rgb(10, 177, 74)">Friends</h3>
-    <ul>{{#each friends}}<br>
-    {{id}}<br>
-    {{name}}<br>
-    {{gender}}<br>
-    {{age}}<br>
-    
-    <h3  style="color:rgb(143, 190, 14)">Mutual_friends</h3>
-    <ul> {{#each mutual_friends}}<br>
-     {{id}}<br>
-    {{name}}<br>
-    {{gender}}<br>
-    {{age}}<br>
-     <ul> {{#each mutual_friends}}<br>
-     {{id}}<br>
-    {{name}}<br>
-    {{gender}}<br>
-    {{age}}<br>
-    {{/each}}
-    </ul>
-    {{/each}}
-    </ul>
-         {{/each}}
-         </ul>
+          <ul>{{#each friends}}<br>
+              {{id}}<br>
+              {{name}}<br>
+              {{gender}}<br>
+              {{age}}<br>
+          <h3  style="color:rgb(143, 190, 14)">Mutual_friends</h3>
+          <ul> {{#each mutual_friends}}<br>
+                {{id}}<br>
+                {{name}}<br>
+                {{gender}}<br>
+                {{age}}<br>
+              <ul> {{#each mutual_friends}}<br>
+                    {{id}}<br>
+                    {{name}}<br>
+                    {{gender}}<br>
+                    {{age}}<br>
+                  {{/each}}
+              </ul>
+                {{/each}}
+        </ul>
+              {{/each}}
+            </ul>
     </ul> 
-
-    
-   <ul><h3  style="color:rgb(0, 68, 255)">Groups</h3>
+  <ul><h3  style="color:rgb(0, 68, 255)">Groups</h3>
    {{#each groups}}<br>
     {{id}}<br>
     {{name}}<br>
     {{description}}<br>
-   
-    <h3  style="color:rgb(10, 177, 74)">Members</h3>
-    <ul>{{#each members}}<br>
+       <h3  style="color:rgb(10, 177, 74)">Members</h3>
+    <ul>{{#with members}}<br>
     {{id}}<br>
     {{name}}<br>
     {{gender}}<br>
     {{age}}<br>
-    
+    {{/with}}
+    </ul>
     <h3  style="color:rgb(143, 190, 14)">Mutual_friends</h3>
     <ul> {{#each mutual_friends}}<br>
      {{id}}<br>
@@ -65,5 +61,24 @@
          {{/each}}
          </ul>
      {{/each}}
-      {{/each}}
+  </ul>
+ <ul><h3  style="color:rgb(0, 68, 255)">Groups</h3>
+{{#each groups}}
+    {{id}}
+{{name}}
+{{description}}
+{{#each members}}
+  {{id}}<br>
+    {{name}}<br>
+    {{gender}}<br>
+    {{age}}<br> 
+    {{/each}}
+    {{/each}}
+     </ul>
+    {{/each}}
+    
+    
 </ul>
+
+              
+               
