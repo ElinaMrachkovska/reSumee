@@ -1,0 +1,117 @@
+<div class="card">
+    <div class="card-body">
+    
+      <div class="display-1 text-primary text-uppercase text-center">task21</div>
+      <div class="card">
+    <div  class="card-body">
+     <ul><div style="color:rgb(207, 40, 223)" class="display-2">Heading</div>
+      <br>
+  <div class="card">
+    <div class="card-body">
+    {{#with heading}}
+    <ul><div style="color:rgb(30, 41, 206)" class="display-3">Main</div>
+    {{#with main}}
+    <li><b class="text-primary text-uppercase">{{title}}</b></li>
+    {{text}}<br>
+       {{#with button_text}}
+        <ul><button class="btn btn-primary text-capitalize"> <i><b>{{solid}}</b></i>
+    </button><br>
+
+       <button class="btn btn-outline-primary ">{{outline}}</button> <br>
+     {{/with}}</ul>
+     {{/with}}
+     </div>
+     </div>
+  
+ 
+  <br>
+     <div class="card">
+    <div class="card-body">
+      <ul><div style="color:rgb(101, 18, 179)" class="display-3">Second</div>
+    {{#with second}}
+    <li><b class="text-secondary text-uppercase">{{title}}</b></li>
+    {{text}}<br>
+   <ul> 
+      {{#with button_text}}
+        <button class="btn btn-secondary text-capitalize"> <i><b>{{solid}}</b></i>
+      </button><br>
+         <button class="btn btn-outline-secondary ">{{outline}}</button> <br>
+      {{/with}}
+      </ul>
+      {{/with}}    
+               
+            </ul>
+           </div>
+            </div>
+          
+             <br>
+     <div class="card">
+    <div class="card-body">
+      <ul><div style="color:rgb(192, 120, 12)" class="display-3">Subblock</div>
+    {{#with subblock}}
+    <p><b class="text-warning text-uppercase">{{title}}</b></p>
+    {{text}}<br>
+   <ul> 
+     {{#with button_text}}
+
+ <button class="btn btn-warning text-capitalize"> <i><b>{{solid}}</b></i>
+    </button><br>
+         <button class="btn btn-outline-warning ">{{outline}}</button> <br>
+      {{/with}}
+      </ul>
+      {{/with}}  
+       
+      </ul> {{/with}}
+        </div>
+                  </div>
+                  </div>
+                  </div>
+                  <br>
+
+
+   
+<div class="card">
+  <div class="card-body">
+    <div style="color: rgb(207, 40, 223);" class="display-2">Nested display</div>
+    <br>
+    {{#with nested_display}}
+   <b class="text-info text-uppercase">{{title}}</b>
+    <div style="color:rgb(12, 58, 88)" class="display-5">Children display</div>
+         {{#with children_display}}
+       <b class="text-info text-capitalize">{{title}}</p>
+        <p class="text-primary">{{text}}</p>
+        {{#with button}}
+         <button class="btn btn-info">
+<span class="text-uppercase"><b>{{text}}</b></span>
+</button> <br>
+        {{/with}}
+        {{/with}}
+      <div style="color:rgb(12, 58, 88)" class="display-6"> {{header_text}}</div> <br>
+          {{#with button}}
+         <button class="btn btn-outline-primary btn-sm">{{text}}</button> 
+        {{/with}}
+        {{/with}}
+      
+  </div>
+</div>
+<br>
+     <div class="card">
+  <div class="card-body">
+    <div style="color: rgb(207, 40, 223);" class="display-2">Paragraph</div>
+    <br>
+  {{#with paragraph}}  
+<div style="color:rgb(12, 58, 88)" class="display-6">{{title}}</div><br>
+{{text}}<br><br>
+ {{#with button}}
+ <button class="btn btn-primary text-light">{{text}}</button> <br>
+ <button class="btn btn-outline-primary btn-sm" >{{url}}</button> <br><br>
+  {{/with}}
+   {{#each list_name}}
+   <button class="btn btn-info text-light">{{text}}</button><br>
+  <button class="btn btn-outline-info">{{url}}</button><br><br>
+   {{/each}}
+   {{/with}}
+    </div>
+ </div>   
+ </div>
+ </div>
