@@ -24,7 +24,7 @@
        {{#each cards}}
     <div class="col-6">
      <div class="card">
-       <div class="card-img-top" src="{{picture.src}}" alt="{{picture.alt}}">
+       <div class="card-img-top"><img src="{{picture.src}}" alt="{{picture.alt}}">
         <div class="card-body">
     <h6 class="card-title">{{title}}</h6>
     <p>{{description}}</p>
@@ -40,41 +40,49 @@
 <br><br>
 {{#with winner}}
 <h2>{{title}}</h2>
+{{#with table}}
 <table class="table">
  <thead>
   <tr>
-   <th> {{#each table.head}} {{this}}{{/each}}</th></tr>
-   <tr><th>{{#each table.user}}</th>
+    {{#each head}}
+      <th>{{this}}</th>
+     {{/each}}
+     </tr>
+ </thead>
+ <tbody>
+
+{{#each user}}
+ <tr>
+      <td>{{place}}</td>
+      <td>{{name}}</td>
+      <td>{{surname}}</td>
+      <td>{{nickname}}</td>
    </tr>
-    </thead>
-    <tr>
-    <th> {{table.user.place}}</th>
-      <td>{{table.user.name}}</td>
-      <td>{{table.user.surname}}</td>
-<td>{{table.user.nickname}}</td>
-      </tr>
-     </table>
-  {{/each}}
+   {{/each}}
+ </tbody>
+ </table>
 {{/with}}
 <br><br>
 <hr>
 <br><br>
+
 {{#with gallery}}
 
 <h2>{{title}}</h2>
-<div class="row gx-3 gy-1"> 
-       
-    <div class="col-4">
+<div class="row"> 
+       {{#each cards}}
+    <div class="col-4 gy-5">
 <div class="card">
-    <div class="card-body">  
-<div class="list-group ">{{#each cards}}
-      <div class="list-group-item text-header">{{cards.name}}</div>   
-<div class="list-group-item">{{ cards.items}}{{this}}</div>
+    <div class="card-header">{{name}}</div>
+    {{#each items}}
+<ul class="list-group list-group-flush">
+      <li class="list-group-item">{{this}}</li>   
+</ul>
 {{/each}}
 </div>
 </div>
+{{/each}}
 </div>
-    </div>
 {{/with}}
 <br><br>
 <hr>
@@ -156,130 +164,23 @@
 
 
 
-  <div>{{#with footer}}
+  {{#with footer}}
       <h5> {{title}}</h5>
-<div class="row gx-2">
-      <div class="col-2">
-
-    <table class="table">
+<div class="row ">
+  <div class="col-3">
       {{#each navigation}}
-      <tr>
-    <td>
 <a class="text-info" href="{{href}}">{{text}}</a>
-        </td>
-                  {{/each}} 
-   {{#each socialMedia}}
-              <td>     
-    <botton class="btn btn-outline-dark" href="{{link}}">{{name}}</botton>
-    </td>
- {{/each}}
+      {{/each}} 
+</div>           
+<div class="col-3">
+   {{#each socialMedia}}  
+    <button class="btn btn-outline-dark" href="{{link}}">{{name}}</button>
+    {{/each}}
+ </div>
+ <div class="col-3">
          {{#each partners}}
-      <td>
- <botton class="btn btn-outline-info" href="{{link}}">{{name}}</botton></td>
-       {{/each}}  
-       </table>
-          </div>
+      <button class="btn btn-outline-info" href="{{link}}">{{name}}</button>
+       {{/each}} 
+       </div> 
       </div>
-      </div>
-      {{/with}}
-   
-<hr>
-
-
-
-
-{{!-- <br>
-{{#with navigation}}
-{{#each links}}
-{{text}}
-{{href}}
-{{/each}}
-{{#with button}}
-{{text}}
-{{href}}
-{{/with}}
-{{/with}}
-{{#with header}}
-{{title}}
-{{description}}
-{{#with button}}
-{{text}}
-{{link}}
-{{/with}}
-{{/with}}
-{{#with city}}
-{{title}}
-{{#each cards}}
-{{#with picture}}
-{{src}}
-{{alt}}
-{{/with}}
-{{title}}
-{{description}}
-{{#with button}}
-{{text}}
-{{href}}
-{{/with}}
-{{/each}}
-{{/with}}
-{{#with winner}}
-{{title}}
-{{#with table}}
-{{#each head}} {{this}}{{/each}}
-{{#each user}}
-{{place}}
-{{name}}
-{{surname}}
-{{nickname}}
-{{/each}}
-{{/with}}
-{{/with}}
-{{#with gallery}}
-{{title}}
-{{#each cards}}
-{{name}}
-{{#each items}}
-{{this}}
-{{/each}}
-{{/each}}
-{{/with}}
-{{#with relaxion}}
-{{title}}
-{{#each cards}}
-{{header}}
-{{title}}
-{{description}}
-{{/each}}
-{{/with}}
-{{#with rest}}
-     {{#each cards}}
-     {{header}}
-         {{title}}
-         {{description}}
-         {{button}}
-         {{footer}}
-         {{/each}}
-         {{/with}}
-        {{#with proposition}}
-{{title}}
-{{#each card}}
-{{header}}
-{{title}}
-{{description}}
-{{/each}}
-{{/with}}
-{{#with footer}}
-      {{title}}
-      {{#each navigation}}
-      {{text}}
-      {{href}}
-      {{/each}}
-       {{#each socialMedia}}
-      {{name}}
-      {{link}}
-      {{/each}}
-{{#each partners}}
-      {{name}}
-      {{link}}
-      {{/each}}
-      {{/with}} --}}
+       {{/with}}  
