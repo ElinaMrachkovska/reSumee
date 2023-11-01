@@ -1,0 +1,285 @@
+{{#with navigation}}
+<nav>
+{{#each links}}
+<a class="btn btn-link" href="{{href}}">{{text}}</a>
+        {{/each}}
+<a class="btn btn-primary" href="{{button.href}}">{{button.text}}</a>
+<hr>
+</nav>
+{{/with}}
+<br><br>
+{{#with header}}
+<h1>{{title}}</h1>
+<p>{{description}}</p>
+<a class="btn btn-primary" href="{{button.link}}">{{button.text}}</a>
+
+{{/with}}
+<br><br>
+<hr>
+<br><br>
+{{#with city}}
+<h2>{{title}}</h2>
+      
+     <div class="row gx-3 gy-1"> 
+       {{#each cards}}
+    <div class="col-6">
+     <div class="card">
+       <div class="card-img-top" src="{{picture.src}}" alt="{{picture.alt}}">
+        <div class="card-body">
+    <h6 class="card-title">{{title}}</h6>
+    <p>{{description}}</p>
+   <a class="btn btn-primary" href="{{button.href}}">{{button.text}}</a>
+   </div>
+   </div>
+</div>
+    </div>
+{{/each}}
+{{/with}}
+<br><br>
+<hr>
+<br><br>
+{{#with winner}}
+<h2>{{title}}</h2>
+<table class="table">
+ <thead>
+  <tr>
+   <th> {{#each table.head}} {{this}}{{/each}}</th></tr>
+   <tr><th>{{#each table.user}}</th>
+   </tr>
+    </thead>
+    <tr>
+    <th> {{table.user.place}}</th>
+      <td>{{table.user.name}}</td>
+      <td>{{table.user.surname}}</td>
+<td>{{table.user.nickname}}</td>
+      </tr>
+     </table>
+  {{/each}}
+{{/with}}
+<br><br>
+<hr>
+<br><br>
+{{#with gallery}}
+
+<h2>{{title}}</h2>
+<div class="row gx-3 gy-1"> 
+       
+    <div class="col-4">
+<div class="card">
+    <div class="card-body">  
+<div class="list-group ">{{#each cards}}
+      <div class="list-group-item text-header">{{cards.name}}</div>   
+<div class="list-group-item">{{ cards.items}}{{this}}</div>
+{{/each}}
+</div>
+</div>
+</div>
+    </div>
+{{/with}}
+<br><br>
+<hr>
+<br><br>
+
+
+
+<div>
+{{#with relaxion}}
+<div class="display-3">{{title}}</div>
+   
+     <div class="row gx-2 gy-4"> 
+       {{#each cards}}
+    <div class="col-5">
+     <div class="card text-bg-secondary">
+       <div class="card-header">{{header}}</div>
+        <div class="card-body">
+    <h6 class="card-title">{{title}}</h6>
+    <p>{{description}}</p>
+      </div>
+   </div>
+</div>
+{{/each}}
+</div>
+{{/with}}
+</div>
+   <br><br>
+<hr>
+<br><br>
+
+         <div>
+{{#with rest}}
+       <div class="row gx-2 gy-2"> 
+       {{#each cards}}
+    <div class="col-6">
+     <div class="card  text-center">
+       <div class="card-header">{{header}}</div>
+        <div class="card-body">
+    <h6 class="card-title">{{title}}</h6>
+    <p>{{description}}</p>
+      <p><button class="btn btn-primary">{{button}}</button></p>
+      <div class="card-footer text-center">{{footer}}</div>
+      </div>
+   </div>
+</div>
+{{/each}}
+</div>
+{{/with}}
+</div>
+   <br>
+   <br>
+<hr>
+<br><br>
+ 
+
+      <div>
+{{#with proposition}}
+<div class="display-2">{{title}}</div>
+       <div class="row gx-2"> 
+       {{#each card}}
+    <div class="col-5">
+     <div class="card text-bg-warning">
+       <div class="card-header text-light">{{header}}</div>
+        <div class="card-body text-light">
+    <h6 class="card-title text-light">{{title}}</h6>
+    <p>{{description}}</p>
+     
+      </div>
+   </div>
+</div>
+{{/each}}
+</div>
+{{/with}}
+</div>
+   <br>
+   <br>
+<hr>
+<br><br>
+
+
+
+  <div>{{#with footer}}
+      <h5> {{title}}</h5>
+<div class="row gx-2">
+      <div class="col-2">
+
+    <table class="table">
+      {{#each navigation}}
+      <tr>
+    <td>
+<a class="text-info" href="{{href}}">{{text}}</a>
+        </td>
+                  {{/each}} 
+   {{#each socialMedia}}
+              <td>     
+    <botton class="btn btn-outline-dark" href="{{link}}">{{name}}</botton>
+    </td>
+ {{/each}}
+         {{#each partners}}
+      <td>
+ <botton class="btn btn-outline-info" href="{{link}}">{{name}}</botton></td>
+       {{/each}}  
+       </table>
+          </div>
+      </div>
+      </div>
+      {{/with}}
+   
+<hr>
+
+
+
+
+{{!-- <br>
+{{#with navigation}}
+{{#each links}}
+{{text}}
+{{href}}
+{{/each}}
+{{#with button}}
+{{text}}
+{{href}}
+{{/with}}
+{{/with}}
+{{#with header}}
+{{title}}
+{{description}}
+{{#with button}}
+{{text}}
+{{link}}
+{{/with}}
+{{/with}}
+{{#with city}}
+{{title}}
+{{#each cards}}
+{{#with picture}}
+{{src}}
+{{alt}}
+{{/with}}
+{{title}}
+{{description}}
+{{#with button}}
+{{text}}
+{{href}}
+{{/with}}
+{{/each}}
+{{/with}}
+{{#with winner}}
+{{title}}
+{{#with table}}
+{{#each head}} {{this}}{{/each}}
+{{#each user}}
+{{place}}
+{{name}}
+{{surname}}
+{{nickname}}
+{{/each}}
+{{/with}}
+{{/with}}
+{{#with gallery}}
+{{title}}
+{{#each cards}}
+{{name}}
+{{#each items}}
+{{this}}
+{{/each}}
+{{/each}}
+{{/with}}
+{{#with relaxion}}
+{{title}}
+{{#each cards}}
+{{header}}
+{{title}}
+{{description}}
+{{/each}}
+{{/with}}
+{{#with rest}}
+     {{#each cards}}
+     {{header}}
+         {{title}}
+         {{description}}
+         {{button}}
+         {{footer}}
+         {{/each}}
+         {{/with}}
+        {{#with proposition}}
+{{title}}
+{{#each card}}
+{{header}}
+{{title}}
+{{description}}
+{{/each}}
+{{/with}}
+{{#with footer}}
+      {{title}}
+      {{#each navigation}}
+      {{text}}
+      {{href}}
+      {{/each}}
+       {{#each socialMedia}}
+      {{name}}
+      {{link}}
+      {{/each}}
+{{#each partners}}
+      {{name}}
+      {{link}}
+      {{/each}}
+      {{/with}} --}}
