@@ -1,0 +1,3 @@
+ {{#if isHot}}
+                    <div class="badge rounded-pill bg-warning">Hot</div> {{/if}}
+                    {{#if idNew}} <div class="badge rounded-pill bg-primary">New</div> {{/if}}
