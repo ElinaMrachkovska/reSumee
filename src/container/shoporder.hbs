@@ -1,0 +1,174 @@
+{{#with navigation}}
+{{#each links}}
+{{text}}
+{{href}}
+{{/each}}
+{{/with}}
+{{header}}
+{{#with contacts_data}}
+{{title}}
+{{#each buttons}}{{this}}
+{{text}}
+{{#if isPrimary}}{{/if}}
+{{#if isOutline}}{{/if}}
+{{/each}}
+{{#with form}}
+{{#with input}}
+{{#with surname}}
+{{label}}
+{{placeholder}}
+{{caption}}
+{{/with}}
+{{#with name}}
+{{label}}
+{{placeholder}}
+{{caption}}
+{{/with}}
+{{#with phone}}
+{{label}}
+{{placeholder}}
+{{caption}}
+{{/with}}
+{{#with email}}
+{{label}}
+{{placeholder}}
+{{caption}}
+{{/with}}
+{{#each switch}}{{this}}
+{{text}}
+{{isActive}}
+{{/each}}
+{{/with}}
+{{/with}}
+{{/with}}
+{{#each action_block}}{{this}}
+{{text}}
+{{#if isSuccess}} {{/if}}
+{{#if isSuccess}} {{/if}}
+{{#if isDanger}} {{/if}}
+{{#if isDanger}} {{/if}}
+{{/each}}
+{{#with total}}
+{{title}}
+{{#each item_list}}{{this}}
+{{name}}
+{{price}}
+{{/each}}
+{{#each additional_info}}{{this}}
+{{text}}
+{{value}}
+{{/each}}
+{{#with total_price}}
+{{text}}
+{{value}}
+{{/with}}
+{{#each button}}{{this}}
+{{text}}
+{{#if isPrimary}} {{/if}}
+{{text}}
+{{#if isOutline}} {{/if}}
+{{/each}}
+{{/with}}
+{{#with delivery}}
+{{title}}
+{{#each select}}{{this}}
+{{label}}
+{{placeholder}}
+{{#each options}}
+{{value}}
+{{text}}
+{{/each}}
+{{/each}}
+{{/with}}
+{{#each delivery_type}}{{this}}
+{{/each}}
+{{#with payment}}
+{{title}}
+{{#each list}}{{this}}
+{{type}}
+{{description}}
+{{/each}}
+{{/with}}
+{{#with contact}}
+{{title}}
+{{#with surname}}
+{{label}}
+{{placeholder}}
+{{caption}}
+{{/with}}
+{{#with name}}
+{{label}}
+{{placeholder}}
+{{caption}}
+{{/with}}
+{{#with phone}}
+{{label}}
+{{placeholder}}
+{{caption}}
+{{/with}}
+{{#with email}}
+{{label}}
+{{placeholder}}
+{{caption}}
+{{/with}}
+{{#with coment}}
+{{label}}
+{{placeholder}}
+{{/with}}
+{{/with}}
+{{#with coupon}}
+ {{title}}
+{{#with select}}
+{{#with availabel_coupon}}
+ {{label}}
+{{placeholder}}
+{{#each options}}{{this}}
+{{value}}
+{{text}}
+{{/each}}
+{{/with}}
+{{/with}}
+{{#with add}} 
+{{#with friend}}
+{{label}}
+{{placeholder}}
+{{caption}}
+{{/with}} 
+{{#with colleague}}
+  {{label}}
+  {{placeholder}}
+   {{caption}}
+   {{/with}}
+   {{/with}}
+   {{/with}}
+   {{#with quiz}}
+{{title}}
+{{#with preference}}
+{{title}}
+{{#each options}}
+ {{/each}}
+{{/with}}
+{{#with your_expirience}}
+{{label}}
+{{/with}}
+{{#with purchase_frequency}}
+{{label}}
+{{placeholder}}
+{{#each options}}{{this}}
+ {{value}}
+{{text}}
+ {{/each}}
+{{/with}}
+{{#with factors}}
+{{title}}
+{{#each options}}{{this}}
+{{/each}}
+{{/with}}
+{{/with}}
+{{#each footer}} {{#each this}}
+{{text}}
+{{link}}
+{{/each}}
+{{/each}}
+
+
