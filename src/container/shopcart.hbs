@@ -1,0 +1,60 @@
+
+    {{#with navigation}}
+      {{#each links}}
+          {{text}}
+          {{href}}
+  {{/each}}
+{{/with}}
+
+{{#with header}}
+      {{title}}
+     {{#with button}}
+        {{text}}
+        {{link}}
+   {{/with}}
+   {{/with}}
+
+{{#each goodsBlock}} {{this}}
+      {{image}}
+        {{name}}
+        {{description}}
+         {{price}} {{this}} 
+        {{amount}}
+        {{#each buttons}} {{this}} 
+    {{/each}}
+    {{/each}}
+       
+
+
+    {{#with total}}
+      {{title}}
+      {{amount}}
+      {{delivery}}
+      {{#each buttons}} {{this}}
+        {{text}}
+          {{link}}
+          {{isSuccess}}
+          {{text}}
+          {{link}}
+          {{isOutline}}
+        {{/each}}
+       {{/with}}
+      
+    
+    {{#with goodsOtherBlock}}
+      {{title}}
+      {{#each cards}}  {{this}}
+         {{image}}
+          {{title}}
+          {{description}}:
+            'The latest iPhone model features a new A15 Bionic chip, improved camera system, and longer battery life.',
+          {{isHot}}: false,
+          {{idNew}}: false,
+       {{/each}}
+    {{/with}}
+
+    {{#each footer}} {{this}}
+          {{text}}
+          {{link}}
+       {{/each}}
+ 

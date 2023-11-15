@@ -1,0 +1,33 @@
+<div class="col-8">
+    <div class="row">
+        
+            {{#with form}}
+               <div>
+                {{#each input}}
+                <div class="col-6 gy-2">  
+                     <label class="form-label">{{label}}</label>
+                    <input class="form-control" placeholder={{placeholder}} type="text">
+                    <div class="form-text"> {{caption}}</div>
+                </div>
+                {{/each}}
+               </div>
+               
+ <hr class="my-4">
+        </div>
+</div>
+
+         <div class="col-8">
+           <div class="row">
+             {{#each switch}}
+            <div class="form-check form-switch {{#if @first}} mb-3{{/if}}">
+                <input class="form-check-input" type="checkbox" {{#if isActive}} checked {{/if}}>
+                <label class="form-check-label"> {{text}}</label>
+            </div>
+            {{/each}}
+        </div>
+       </div>
+    {{/with}}
+    </div>
+</div>
+
+<hr class="col-8 my-4">
