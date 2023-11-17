@@ -1,60 +1,133 @@
+<main>
+  <section>
 
-    {{#with navigation}}
-      {{#each links}}
-          {{text}}
-          {{href}}
-  {{/each}}
-{{/with}}
-
-{{#with header}}
-      {{title}}
-     {{#with button}}
-        {{text}}
-        {{link}}
-   {{/with}}
-   {{/with}}
-
-{{#each goodsBlock}} {{this}}
-      {{image}}
-        {{name}}
-        {{description}}
-         {{price}} {{this}} 
-        {{amount}}
-        {{#each buttons}} {{this}} 
-    {{/each}}
-    {{/each}}
-       
-
-
-    {{#with total}}
-      {{title}}
-      {{amount}}
-      {{delivery}}
-      {{#each buttons}} {{this}}
-        {{text}}
-          {{link}}
-          {{isSuccess}}
-          {{text}}
-          {{link}}
-          {{isOutline}}
+    <div class="card mb-5 p-2">
+      {{#with navigation}}
+      <div class="nav">
+        {{#each links}}
+        <a class="nav-link {{#if @last}} disabled {{/if}}" href="{{href}}">{{text}}</a>
         {{/each}}
-       {{/with}}
-      
-    
-    {{#with goodsOtherBlock}}
-      {{title}}
-      {{#each cards}}  {{this}}
-         {{image}}
-          {{title}}
-          {{description}}:
-            'The latest iPhone model features a new A15 Bionic chip, improved camera system, and longer battery life.',
-          {{isHot}}: false,
-          {{idNew}}: false,
-       {{/each}}
+      </div>
+      {{/with}}
+    </div>
+
+    {{#with header}}
+    <h2 class="mb-3">{{title}}</h2>
+
+    {{#with button}}
+    <div class="col-12 mb-3">
+      <a href="{{link}}"><button class="btn btn-outline-secondary mb-2">{{text}}</button></a>
+    </div>
+    {{/with}}
     {{/with}}
 
-    {{#each footer}} {{this}}
-          {{text}}
-          {{link}}
-       {{/each}}
- 
+    <div class="row gx-3">
+      {{#each goodsBlock}}
+      <div class="card mb-2">
+        <div class="card-body row">
+          <div class="col-2">
+            <img class="card-img-top" src="{{image}}">
+          </div>
+          <div class="col-4">
+            <div><b>{{name}}</b></div>
+            <div class="btn text btn-sm">{{description}}</div>
+          </div>
+          <div class="col-2">
+            {{#with price}}
+            <p> {{title}}</p>
+            <label class="form-label"><b>{{value}}</b></label>
+            {{/with}}
+          </div>
+          <div class="col-2">
+            <div>{{amount}}</div>
+          </div>
+          <div class="col-2">
+            {{#each buttons}}
+            <button
+              class="btn d-flex mb-3 {{#if isPrimary}}btn-primary{{/if}} {{#if isDanger}}btn-outline-danger{{/if}} {{#if isInfo}}btn-info text-light{{/if}}">
+              {{text}}
+              {{/each}}
+            </button>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+
+<hr class="mt-5 mb-5">
+
+    <div class="row gx-3">
+      {{#with total}}
+      <div class="col-4">
+        <div class="alert  mb-2">
+          <h4>{{title}}</h4>
+          <h2>{{amount}}</h2>
+          <div class="btn mb-3 text btn-sm">{{delivery}}</div>
+          {{#each buttons}}
+          <a href="{{link}}"><button class="btn mb-3 {{#if isSuccess}}btn-success{{/if}} 
+          {{#if isOutline}}btn-outline-success{{/if}}"></a>
+            {{text}}
+          </button>
+          {{/each}}
+        </div>
+      </div>
+      {{/with}}
+    </div>
+
+<hr class="my-5">
+
+{{#with goodsOtherBlock}}
+ <div class="row"> 
+ <h2 class="text-center">{{title}}</h2>
+       {{#each cards}}
+      <div class="col-4">
+                <div class="card my-1">
+                <img class="card-img-top" src="{{image}}">
+        <div class="card-body">
+         <h6 class="card-title">{{title}}
+          {{#if isHot}} <div class="badge rounded-pill bg-warning">Hot</div> {{/if}}
+          {{#if isNew}} <div class="badge rounded-pill bg-prime">New</div> {{/if}}</h6>
+         <p>{{description}}</p>
+        </div>
+        </div>
+      </div>
+    {{/each}}
+    </div>
+    </div>
+  {{/with}}
+  </div>
+
+<hr class="my-5">
+
+
+{{#with subscribe}}
+<div class="col-12 m-6">
+ <div class="alert alert-dark mb-2">
+ <h2>{{header}}</h2>
+  <p>{{description}}</p>
+{{#each buttons}}
+<div class="flex-column">
+ <a href="{{link}}"><button class="btn btn-primary text-light mb-2">{{text}}</button></a>
+ {{/each}}</div>
+ </div>
+</div>
+{{/with}}
+<hr class="mt-4 mb-4">
+
+
+
+   <div class="row gx-5"> 
+  {{#each footer}}
+              <div class="nav col-2">
+                <div>
+                {{#each this}}
+                    <div>
+                      <a class="nav-link {{#if @last}} disabled {{/if}}" href="{{this.link}}">{{this.text}}</a>
+                      </div>
+                    {{/each}}
+                    </div>
+                 </div>
+                {{/each}}
+         </div>
+  </section>
+</main>
