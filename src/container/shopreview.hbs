@@ -16,15 +16,11 @@
 
             <div class="col-8">
 {{#with formBlock}}
-
- 
                 <h2 class="mb-3">{{header}}</h2>
-
                 {{#with rating}}
                 <div class="col-12 mb-3">
 <p>{{title}} : {{value}}  </p>
       {{/with}}  
-
  <div class="row">
     {{#with actionBlock}}
      <div class="col-12">  
@@ -37,9 +33,7 @@
         {{/each}}
         </ul> 
      </div>
-
 <hr class="mt-5 mb-5">
-
  <div class="card">
        {{#with report}}
 <div class="col-12 m-6">
@@ -52,16 +46,11 @@
  </div>
  {{/with}}
  </div>
-
 {{/with}}
 </div>
 
-
-
 <hr class="mt-5 mb-5">
 {{/with}}
-
-
  <div class="col-12 mb-3">
   {{#with feedbackBlock}}
          <h2 class="mb-3">{{title}}</h2>
@@ -74,43 +63,46 @@
             </div> 
     {{/with}}
 </div>
- </div>
-
-            <div class="col-4">
+ </div></div>
+            </div>
+ 
+           <div class="col-4">
               {{#with goodsInfo}}
                    <div class="card my-1">
                 <img class="card-img-top" src="{{photo}}">
         <div class="card-body">
          <h6 class="card-title">{{name}}</h6>
-</div>
-</div>
-              </div>       
- <div class="col-4">
+    </div>
+   </div>
+      
+
    <div class="card my-1">
       <div class="card-body">
       <h3>{{price}}</h3>  
        <p {{#if inMarket}}{{/if}}> Є в наявності</p>
- 
-        {{#each buttons}}
+         {{#each buttons}}
          <a href="{{link}}"><button class="btn mb-1 {{#if isPrimary}}btn-primary{{/if}} 
           {{#if isSecondary}}btn-secondary{{/if}}"></a>
             {{text}}
           </button>
                      {{/each}}
         </div>
-       </div>
+      
       </div>
-              <div class="col-4">
+             
        <div class="card my-1">
         <div class="card-body"> 
          {{#with seller}}
          <p>{{title}}: <strong>{{value}} </strong> </p> 
           {{/with}}
            </div>
+                {{/with}}
+  
        </div>
-      </div>
-  {{/with}}
-   {{/with}}
+        {{/with}}
+   </div>
+     </div>
+     
 
 
  <hr class="mb-2 mt-2">
@@ -166,7 +158,7 @@
    </div>
  </div>
    </div>
-     </div>
+     
      
 
 
