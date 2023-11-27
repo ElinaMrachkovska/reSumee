@@ -1,0 +1,101 @@
+<main>
+    <section>
+
+        <div class="card mb-5 p-2">
+    {{#with navigation}}
+    <div class="nav">
+        {{#each links}}
+        <a class="nav-link {{#if @last}} disabled {{/if}}" href="{{href}}">{{text}}</a>
+        {{/each}}
+    </div>
+    {{/with}}
+</div>
+
+<hr>
+
+{{#each breadcrumb}}
+{{name}}
+{{url}}
+{{/each}}
+{{header}}
+{{#each sortBlock}}
+{{placeholder}}
+{{#each options}}
+{{value}}
+{{text}}
+{{/each}}
+{{/each}}
+
+{{#with filterBlock}}
+{{#with sellers}}
+{{title}}
+{{#each list}}
+{{value}}
+{{/each}}
+{{/with}}
+
+{{#with brands}}
+{{title}}
+{{#with input}}
+{{placeholder}}
+{{/with}}
+{{#each options}}
+{{value}}
+{{/each}}
+{{/with}}
+{{#with price}}
+{{title}}
+{{#with range}}
+{{from}}
+{{to}}
+{{/with}}
+{{#with button}}
+{{text}}
+{{link}}
+{{/with}}
+{{/with}}
+{{#each filterList}}
+{{title}}
+{{#each options}}{{this}}
+{{/each}}
+{{/each}}
+{{/with}}
+{{#each goodsList}}
+{{img}}
+{{isHot}}
+{{isNew}}
+{{isFast}}
+{{isFree}}
+{{name}}
+{{#with review}}
+{{amount}}
+{{text}}
+{{/with}}
+{{price}}
+{{delivery}}
+{{#each buttons}}
+{{text}}
+{{link}}
+{{isPrimary}}
+{{/each}}
+{{#each characteristics}}
+{{title}}
+{{value}}
+{{/each}}
+{{/with}}
+{{img}}
+{{isFree}}
+{{name}}
+{{#with review}}
+{{amount}}
+{{text}}
+{{/with}}
+{{price}}
+{{delivery}}
+{{#each buttons}}
+{{text}}
+{{link}}
+{{isPrimary}}
+
+
+
