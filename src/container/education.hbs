@@ -2,28 +2,27 @@
     {{#with main}}
     <main>
 
-        <section>
-            {{> title big=true data="My educationss"}}
-            <ul class="ps-5">
-                {{#each educations}}
-                <li>
-                    {{name}}
-                    {{#unless isEnd}}(Еще в процессе){{/unless}}
-                </li>
-                {{/each}}
-            </ul>
-        </section>
-        <section>
-            {{> title big=false data="My certificates"}}
-            <ul class="ps-5">
-                {{#each certificates}}
-                <li>
-                    {{name}} ({{id}})
-                </li>
-                {{/each}}
-            </ul>
-        </section>
+ <section>
+           <h2 style="color:blue">{{> title big=true data="My educationss"}}</h2> 
+   {{#each educations}}
 
+<ul class="list-group mb-2">
+<li class="list-group-item text-bg-secondary">{{name}}
+    {{#unless isEnd}}
+<div class="badge rounded-pill bg-warning">in process</div>{{/unless}}
+ </li>
+</ul>
+{{/each}}
+
+ <section>
+            {{> title big=false data="My certificates"}}
+   {{#each certificates}}
+
+<ul class="list-group mb-2">
+<li class="list-group-item text-bg-danger">{{name}}</li>
+<li class="list-group-item text-bg-dark">{{id}}</li>
+</ul>
+{{/each}}
+</section>
     </main>
     {{/with}}
-</div>

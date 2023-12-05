@@ -1,4 +1,86 @@
- <h1 style="color:rgb(235, 11, 11)">{{name}}</h1>
+ <main class="m-2">
+ <h1 style="color:rgb(235, 11, 11)" class="text-center mb-4">{{name}}</h1>
+ <div class="row gx-2 gy-1"> 
+             <div class="col-7">
+          <div class="card mb-4 text-bg-danger m-0">
+            <div class="card-header text-center text-bg-secondary"><h2  style="color:rgb(241, 240, 238)">Users</h2></div>
+            <div class="card-body">
+           <ul>{{#each users}}<br>
+           <table class="table table-stiped table-bordered text-bg-info">
+<thead>
+  <tr>
+    <th>id</th>
+    <th>name</th>
+     <th>gender</th>
+     <th>age</th>
+       </tr>
+</thead>
+<tbody>
+  <tr>
+    <th>{{id}}</th>
+    <td>{{name}}</td>
+    <td>{{gender}}</td>
+    <td>{{age}}</td>
+  </tr>
+</tbody></table>
+          <div class="card mb-4">
+          <div class="card-header text-center text-bg-dark"><h3 style="color:rgb(10, 177, 74)">Friends</h3></div>
+           <div class="card-body text-bg-warning">
+            
+          <ul>{{#each friends}}<br>
+                   <table class="table table-stiped table-bordered text-bg-info">
+<thead>
+  <tr>
+    <th>id</th>
+    <th>name</th>
+     <th>gender</th>
+     <th>age</th>
+       </tr>
+</thead>
+<tbody>
+  <tr>
+    <th>{{id}}</th>
+    <td>{{name}}</td>
+    <td>{{gender}}</td>
+    <td>{{age}}</td>
+  </tr>
+</tbody></table>
+        <div class="card mb-4">
+          <div class="card-header text-center text-bg-secondary"><h3 style="color:rgb(143, 190, 14)">Mutual_friends</h3></div>
+            <div class="card-body text-bg-light">
+           {{#each mutual_friends}}<br>
+                    <table class="table table-stiped table-bordered text-bg-info">
+<thead>
+  <tr>
+    <th>id</th>
+    <th>name</th>
+     <th>gender</th>
+     <th>age</th>
+       </tr>
+</thead>
+<tbody>
+  <tr>
+    <th>{{id}}</th>
+    <td>{{name}}</td>
+    <td>{{gender}}</td>
+    <td>{{age}}</td>
+  </tr>
+</tbody></table>
+             {{/each}}            
+      </div>
+      {{/each}}
+      </div>
+  </div>
+   </div>
+
+      </div>
+         </div>
+         </div>
+         </div>
+    
+
+
+ {{!-- <h1 style="color:rgb(235, 11, 11)">{{name}}</h1>
   
         <h2  style="color:rgb(255, 102, 0)">Users</h2>
    <ul>{{#each users}}<br>
@@ -30,8 +112,102 @@
               {{/each}}
             </ul>
     </ul> 
-  <ul>
-   {{#each groups}}<br>
+  <ul>  --}}
+
+<div class="col-5">
+          <div class="card mb-4 text-bg-danger m-0">
+            <div class="card-header text-center text-bg-secondary"><h2  style="color:rgb(241, 240, 238)">Groups</h2></div>
+            <div class="card-body">
+           <ul>{{#each groups}}<br>
+           <table class="table table-stiped table-bordered text-bg-info">
+<thead>
+  <tr>
+    <th>id</th>
+    <th>name</th>
+     <th>description</th>
+           </tr>
+</thead>
+<tbody>
+  <tr>
+    <th>{{id}}</th>
+    <td>{{name}}</td>
+    <td>{{description}}</td>
+     </tr>
+ </tbody></table>
+          <div class="card mb-4">
+          <div class="card-header text-center text-bg-dark"><h3 style="color:rgb(10, 177, 74)">Members</h3></div>
+           <div class="card-body text-bg-warning">
+            
+          <ul>{{#each members}}<br>
+                              <table class="table table-stiped table-bordered text-bg-info">
+<thead>
+  <tr>
+    <th>id</th>
+    <th>name</th>
+     <th>description</th>
+           </tr>
+</thead>
+<tbody>
+  <tr>
+    <th>{{id}}</th>
+    <td>{{name}}</td>
+    <td>{{description}}</td>
+     </tr>
+ </tbody></table> 
+ {{/each}}
+   </div>
+   </div> 
+        <div class="card mb-4">
+          <div class="card-header text-center text-bg-secondary"><h3 style="color:rgb(143, 190, 14)">Mutual friends</h3></div>
+            <div class="card-body text-bg-light">
+           {{#each mutual_friends}} {{this}}
+                                                 <table class="table table-stiped table-bordered text-bg-info">
+<thead>
+  <tr>
+    <th>id</th>
+    <th>name</th>
+     <th>description</th>
+           </tr>
+</thead>
+<tbody>
+  <tr>
+    <th>{{id}}</th>
+    <td>{{name}}</td>
+    <td>{{description}}</td>
+     </tr>
+ </tbody></table> 
+       <div class="card mb-4">
+          <div class="card-header text-center text-bg-secondary"><h3 style="color:rgb(143, 190, 14)">Mutual friends</h3></div>
+            <div class="card-body text-bg-light">
+           {{#each mutual_friends}}
+          <table class="table table-stiped table-bordered text-bg-info">
+<thead>
+  <tr>
+    <th>id</th>
+    <th>name</th>
+     <th>description</th>
+           </tr>
+</thead>
+<tbody>
+  <tr>
+    <th>{{id}}</th>
+    <td>{{name}}</td>
+    <td>{{description}}</td>
+     </tr>
+ </tbody></table> 
+ {{/each}}
+ </div>
+ </div>           
+   {{/each}}
+           {{/each}}
+       </div>
+      </div>
+     {{/each}}
+         </div>
+</main>
+
+{{!-- <h3  style="color:rgb(10, 177, 74)">Groups</h3> --}}
+   {{!-- {{#each groups}}<br>
     {{id}}<br>
     {{name}}<br>
     {{description}}<br>
@@ -65,4 +241,5 @@
   </ul>
     
               
-               
+                --}}
+                

@@ -1,11 +1,16 @@
  <h1 style="color:brown">Mac</h1>
-   <div>
-    {{name}}<br>
+
+<div class="row gx-3">
+         <div class="card mb-2">
+        <div class="card-body row">
+          <div class="col-2">
+            {{name}}<br>
     {{description}}<br>
     {{price}}<br>
     {{category}}<br>
-    </div>
-  <h3  style="color:rgb(255, 102, 0)">Features</h3>
+          </div>
+          <div class="col-4">
+             
     {{#with features}}<br>
     <i><strong>Processor</strong></i><br>
       <ul>{{#with processor}}
@@ -15,15 +20,26 @@
         <li>{{cores}}</li>
         <li>{{cache}}</li>
         {{/with}}
-      </ul> 
-      <i><strong>Memory</strong></i><br>
+      </ul>
+            <div class="btn text btn-sm">   <i><strong>Memory</strong></i><br>
+     <ul>{{#with memory}}
+        <li>{{type}}</li>
+        <li>{{size}}</li>
+        <li>{{speed}}</li>
+         {{/with}}
+      </ul></div>
+          </div>
+          <div class="col-2">
+            <i><strong>Memory</strong></i><br>
      <ul>{{#with memory}}
         <li>{{type}}</li>
         <li>{{size}}</li>
         <li>{{speed}}</li>
          {{/with}}
       </ul>
-        <i><strong>Display</strong></i><br>
+          </div>
+          <div class="col-2">
+            <i><strong>Display</strong></i><br>
       <ul>{{#with display}}
         <li>{{size}}</li>
         <li>{{resolution}}</li>
@@ -33,14 +49,19 @@
          <li>{{refresh_rate}}</li>
         {{/with}}
       </ul> 
-        <i><strong>Graphics</strong></i><br>
+          </div>
+          <div class="col-2">
+             <i><strong>Graphics</strong></i><br>
      <ul>{{#with graphics}}
         <li>{{brand}}</li>
         <li>{{model}}</li>
         <li>{{memory}}</li>
          {{/with}}
      </ul>
-              <i><strong>Ports</strong></i><br>
+          </div>
+          <hr>
+              <div class="col-2">
+             <i><strong>Ports</strong></i><br>
      {{#each ports}}
         <li>{{type}}</li>
         {{count}}<br>
@@ -49,27 +70,42 @@
         {{/with}}
     {{/each}}
      </ul>
-      <i><strong>Battery</strong></i><br>
+              </div>
+    
+                      <div class="col-2">
+              <i><strong>Battery</strong></i><br>
      <ul>{{#with battery}}
         <li>{{type}}</li>
         <li>{{capacity}}</li>
         <li>{{life}}</li>
-         {{/with}}
+          {{/with}}
      </ul>
        {{weight}}<br>
-        <i><strong>Dimensions</strong></i><br>
+          </div>
+
+            <div class="col-2">
+       <i><strong>Dimensions</strong></i><br>
      <ul>{{#with dimensions}}
          <li>{{height}}</li>
          <li>{{width}}</li>
          <li>{{depth}}</li>
          {{/with}}
      </ul>
-     <i><strong>Operating_system</strong></i><br>
+          </div>
+<div class="col-2">
+           <i><strong>Operating_system</strong></i><br>
     {{operating_system}}<br>
      <i><strong>Accessories</strong></i><br>
             {{#each accessories}}
            <b style="color: rgb(92, 15, 28)">{{name}}</b><br>
            <i>{{price}}</i><br>
              {{/each}}
+              </div>
        {{/with}}
-       <br>
+      
+      
+          </div>
+        </div>
+      </div>
+    
+

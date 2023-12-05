@@ -7,8 +7,8 @@ const router = express.Router()
 
 var header = {
   name: {
-    firstname: 'Dmytro',
-    lastname: 'Ivanov',
+    firstname: 'Elina',
+    lastname: 'Mrachkovska',
   },
   position: 'Junior Fullstack JS Developer',
   salary: '600$ в місяць',
@@ -52,7 +52,7 @@ router.get('/summary', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('summary', {
     // ↙ сюди вводимо JSON дані
-
+    layout: 'index',
     page: {
       title: 'Resume | Summary',
     },
@@ -79,6 +79,7 @@ router.get('/skills', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('skills', {
     // ↙ сюди вводимо JSON дані
+    layout: "index",
 
     page: {
       title: 'Resume | Skills',
@@ -153,6 +154,7 @@ router.get('/education', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('education', {
+    layout: 'index',
     page: {
       title: 'Resume | Education',
     },
@@ -209,7 +211,7 @@ router.get('/work', function (req, res) {
   res.render('work', {
     //            ↙ cюди вводимо назву файлу з сontainer
 
-    layout: 'big',
+    layout: 'index',
 
     page: {
       title: 'Resume | Work',
@@ -277,7 +279,7 @@ router.get('/program', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('program', {
     layout: "program",
-
+    layout: 'index',
     excursion: {
       name: 'Cultural Tour',
       location: {
@@ -359,7 +361,7 @@ router.get('/program', function (req, res) {
 router.get('/web', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('web', {
-    layout: "basic",
+    layout: 'index',
     web: {
       languages: [
         {
@@ -490,7 +492,7 @@ router.get('/js', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('js', {
-    layout: "basic",
+    layout: 'index',
 
     name: 'JavaScript',
     description:
@@ -572,7 +574,7 @@ router.get('/js', function (req, res) {
 
 router.get('/car', function (req, res) {
   res.render('car', {
-    layout: "basic",
+    layout: 'index',
 
     make: 'Toyota',
     model: 'Camry',
@@ -628,7 +630,14 @@ router.get('/car', function (req, res) {
           knee: 2,
           rear: 2,
         },
-        zr
+
+        assistance: {
+          blind_spot_monitoring: true,
+          rear_cross_traffic_alert: true,
+          lane_departure_warning: true,
+          adaptive_cruise_control: true,
+          collision_warning: true,
+        },
       },
     },
     engine: {
@@ -668,7 +677,7 @@ router.get('/mac', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('mac', {
-    layout: "basic",
+    layout: 'index',
 
     name: 'Apple MacBook Pro',
     description: 'The ultimate notebook for power users',
@@ -756,7 +765,7 @@ router.get('/task21', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('task21', {
-    layout: "basic",
+    layout: 'index',
     heading: {
       main: {
         title: 'JavaScript',
@@ -828,7 +837,7 @@ router.get('/facebook', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('facebook', {
-    layout: "basic",
+    layout: "index",
     name: 'Facebook',
     users: [
       {
@@ -996,7 +1005,7 @@ router.get('/task21', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('task21', {
-    layout: "basic",
+    layout: "index",
     heading: {
       main: {
         title: 'JavaScript',
@@ -1074,7 +1083,7 @@ router.get('/task22', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('task22', {
-    layout: "basic",
+    layout: 'index',
 
     page_header: {
       title: 'InnovaMind',
@@ -1136,7 +1145,7 @@ router.get('/task22', function (req, res) {
 // res.render генерує нам HTML сторінку
 router.get('/task31', function (req, res) {
   res.render('task31', {
-    layout: "basic",
+    layout: 'index',
     navigation: {
       links: [
         {
@@ -1396,7 +1405,7 @@ router.get('/shophome', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shophome', {
-    layout: 'shop',
+    layout: 'index',
     navigation: {
       links: [
         {
@@ -1684,7 +1693,7 @@ router.get('/shoporder', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shoporder', {
-    layout: 'shop',
+    layout: 'index',
     navigation: {
       links: [
         {
@@ -2060,7 +2069,7 @@ router.get('/shopcart', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shopcart', {
-    layout: 'shop',
+    layout: 'index',
     navigation: {
       links: [
         {
@@ -2310,7 +2319,7 @@ router.get('/shopreview', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shopreview', {
-    layout: 'shop',
+    layout: 'index',
     navigation: {
       links: [
         {
@@ -2590,7 +2599,92 @@ router.get('/shopreview', function (req, res) {
   //                  ↑↑ сюди вводимо JSON дані
 })
 // ================================================================
+router.get('/index', function (req, res) {
+  // res.render генерує нам HTML сторінку
 
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('index', {
+    layout: 'index',
+    links: [
+      {
+        text: 'Summary',
+        href: '/summary',
+      },
+      {
+        text: 'Skills',
+        href: '/skills',
+      },
+      {
+        text: 'Work',
+        href: '/work',
+      },
+      {
+        text: 'Person',
+        href: '/person',
+      },
+      {
+        text: 'Program',
+        href: '/program',
+      },
+      {
+        text: 'Education',
+        href: '/education',
+      },
+      {
+        text: 'Car',
+        href: '/car',
+      },
+      {
+        text: 'Facebook',
+        href: '/facebook',
+      },
+      {
+        text: 'Js',
+        href: '/js',
+      },
+      {
+        text: 'Web',
+        href: 'web',
+      },
+      {
+        text: 'Order',
+        href: '/order',
+      },
+      {
+        text: 'Task21',
+        href: '/task21',
+      },
+      {
+        text: 'Task31',
+        href: '/task31',
+      },
+      {
+        text: 'Mac',
+        href: '/mac',
+      },
+      {
+        text: 'Shoporder',
+        href: '/shoporder',
+      },
+      {
+        text: 'Shophome',
+        href: 'shophome',
+      },
+      {
+        text: 'Shopreview',
+        href: '/shophome',
+      },
+      {
+        text: 'Shopcart',
+        href: '/shopcart',
+      },
+      {
+        text: 'Shopcatalog',
+        href: '/shopcatalog',
+      },
+    ],
+  })
+})
 // router.get Створює нам один ентпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
@@ -2599,7 +2693,11 @@ router.get('/shopcatalog', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shopcatalog', {
+
+    layout: 'index',
+
     layout: 'shop',
+
     navigation: {
       links: [
         {
@@ -2972,7 +3070,7 @@ router.get('/shopcatalog', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shopcatalog', {
-    // layout: 'shop',
+    layout: 'index',
     navigation: {
       links: [
         {
@@ -3345,7 +3443,7 @@ router.get('/shopcatalog', function (req, res) {
 router.get('/person', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('person', {
-    layout: "person",
+    layout: "index",
     person: {
       name: 'Emma Johnson',
       age: 32,
@@ -3374,7 +3472,7 @@ router.get('/person', function (req, res) {
           endDate: '2016-12-31',
           responsibilities: [
             'Developed new features for Google Maps',
-            'Worked on improving search algorithms',
+            'ed on improving search algorithms',
           ],
           year_founded: 1990,
           industry: 'Technology',

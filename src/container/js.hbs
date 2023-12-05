@@ -1,4 +1,159 @@
- <h1 style="color:rgb(58, 6, 245)">JS</h1>
+
+<div class="row"> 
+<div class="col-12 m-6">
+ <div class="alert alert-danger mb-2 text-center">
+    <div class="alert alert-title"> <h2>{{name}}</h2></div>
+  <hr >
+  
+  <p>{{description}}</p>
+  <div class="col-2 m-2" style="position:fixed; left: 725px">
+  {{#with history}}
+ <div class="alert alert-secondary text-center">
+  <div class="alert alert-title"><h2 style="color:rgb(68, 15, 212)">History</h2></div>
+  <hr class="mb-1">
+  <p>{{year}}</p>
+   <p>{{founder}}</p>
+ {{/with}}
+</div>
+</div>
+  <div class="row"> 
+
+<div class="col-3 g-1">
+   
+<div class="card text-bg-dark mb-2 text-center">
+  <div class="card-title text-bg-secondary"><h3 style="color:rgb(200, 230, 71)">Types</h3></div>
+ 
+  {{#each types}}
+  <div class="form-check ms-2">
+      <label class="form-check-label">{{this}}</label>
+    <input type="checkbox" class="form-check-input ">
+  </div>
+ {{/each}}
+
+      
+</div>
+</div>
+
+ 
+<div class="col-3 g-1">
+  {{#with syntax}} 
+ <div class="card text-bg-primary mb-2 text-center">
+  <div class="card-title text-bg-info"><h3 style="color:rgb(13, 14, 13)">Syntax</h3></div>
+
+
+   <label class="form-label"><h3 style="color:rgb(78, 15, 160)">Variables</h3></label>
+   {{#each variables}}
+  <div class="form-check ms-2">
+      <label class="form-check-label">{{this}}</label>
+    <input type="checkbox" class="form-check-input">
+  </div>
+ {{/each}}
+ <hr class="mb-1 mt-1">
+
+   <label class="form-label"><h3 style="color:rgb(204, 25, 180)">Functions</h3></label>
+   {{#each functions}}
+  <div class="form-check ms-2">
+      <label class="form-check-label">{{this}}</label>
+    <input type="checkbox" class="form-check-input">
+  </div>
+ {{/each}}
+ <hr class="mb-1 mt-1">
+
+<label class="form-label"><h3 style="color:rgb(198, 211, 12)">Conditionals</h3></label>
+   {{#each conditionals}}
+  <div class="form-check ms-2">
+      <label class="form-check-label">{{this}}</label>
+    <input type="checkbox" class="form-check-input">
+  </div>
+ {{/each}}
+ <hr class="mb-1 mt-1">
+ <label class="form-label"><h3 style="color:rgb(30, 6, 61)">Loops</h3></label>
+   {{#each loops}}
+  <div class="form-check ms-2">
+      <label class="form-check-label">{{this}}</label>
+    <input type="checkbox" class="form-check-input">
+  </div>
+ {{/each}}
+ <hr class="mb-1 mt-1">
+  <label class="form-label"><h3 style="color:rgb(211, 85, 12)">Classes</h3></label>
+   {{#each classes}}
+  <div class="form-check ms-2">
+      <label class="form-check-label">{{this}}</label>
+    <input type="checkbox" class="form-check-input">
+  </div>
+ {{/each}}   
+ <hr class="mb-1 mt-1">  
+       </div> 
+        {{/with}}
+  </div>
+<div class="col-3 g-1">
+  
+ <div class="card text-bg-primary mb-2 text-center">
+  <div class="card-title text-bg-info"><h3 style="color:rgb(65, 6, 30)">Features</h3></h3></div>
+ 
+   {{#each features}}
+  <div class="form-check ms-2">
+      <label class="form-check-label">{{this}}</label>
+    <input type="checkbox" class="form-check-input">
+  </div>
+ {{/each}}                  
+      </div>
+      </div>
+    
+      <div class="col-3 g-1">
+
+ <div class="card text-bg-primary mb-2 text-center">
+  <div class="card-title text-bg-info"><h3 style="color:rgb(168, 5, 70)">Libraries</h3></div>
+
+   
+   {{#each libraries}}
+  <div class="form-check ms-2">
+      <label class="form-check-label">{{this}}</label>
+    <input type="checkbox" class="form-check-input">
+  </div>
+ {{/each}}                  
+      </div>
+      </div>
+
+      <div class="col-3 g-1">
+
+ <div class="card text-bg-primary mb-2 text-center">
+  <div class="card-title text-bg-info"><h3 style="color:rgb(39, 8, 216)">Tools</h3></div>
+
+   
+   {{#each tools}}
+  <div class="form-check ms-2">
+      <label class="form-check-label">{{this}}</label>
+    <input type="checkbox" class="form-check-input">
+  </div>
+ {{/each}}                  
+      </div>
+      </div>
+
+            <div class="col-3 g-1">
+
+ <div class="card text-bg-primary mb-2 text-center">
+  <div class="card-title text-bg-info"><h3 style="color:rgb(216, 32, 8)">Community</h3></div>
+
+{{#each community}}
+
+      <ul> 
+           <li> {{name}}</li>
+            {{type}} 
+            </ul>
+            <hr>
+         {{/each}}                  
+      </div>
+      </div>           
+       </div>
+        </div>
+        </div>
+        </div>
+
+
+
+{{!-- <div class="row"> 
+  <h1 style="color:rgb(58, 6, 245)">JS</h1>
    <div>
       <h3  style="color:rgb(8, 85, 90)">{{name}}</h3>
          <i><strong>{{description}}</strong></i><br>
@@ -84,3 +239,5 @@
             </ul>
          {{/each}}
             </div> 
+
+            </div> --}}

@@ -1,4 +1,175 @@
+{{!--  
+ <div class="row g-5 gr-1"> 
+  <h1 style="color:brown">Web</h1>
+
+    {{#with web}}
+       {{#each languages}}
+   
+  <div class="card text-bg-success">
+  <div class="card-header text-center"><h3  style="color:rgb(255, 102, 0)">{{name}}</h3></div>
+  <div class="card-body text-center">
+    <h6 class="card-title"><strong>{{version}}</strong></i></h6>
+    <p><i>{{description}}</i></p>
+  </div>
+  </div>
+    
+          {{#each elements}}
+  <div class="card text-bg-warning">
+  <div class="card-header text-center"><h3  style="color:rgb(3, 56, 6)">{{name}}</h3></div>
+  <div class="card-body text-center">
+      <p><i>{{description}}</i></p>
+      </div>
+</div>
+
+  {{#each attributes}}
+  <div class="card text-bg-success">
+  <div class="card-header text-center"><h3  style="color:rgb(255, 102, 0)">{{name}}</h3></div>
+  <div class="card-body text-center"><p><i>{{description}}</i></p></div>
+</div>
+{{/each}}
+{{/each}}
+   <div class="card text-bg-danger">
+  <div class="card-header text-center"><h3  style="color:rgb(255, 102, 0)">{{name}}</h3></div>
+  <div class="card-body text-center">
+    <h6 class="card-title"><strong>{{version}}</strong></i></h6>
+    <p><i>{{description}}</i></p>
+  </div>
+   </div>
+     {{#each properties}}
+  <div class="card text-bg-secondary">
+  <div class="card-header text-center"><h3  style="color:rgb(204, 37, 15)">{{name}}</h3></div>
+  <div class="card-body text-center">
+   <p>{{description}}</p>
+   {{#each values}}
+    <p><i>{{value}}</i></p>
+    <p><i>{{description}}</i></p>
+    {{/each}}
+    {{/each}}
+   </div>
+</div>
+</div>
+
+
+      
+  <div class="card text-bg-success">
+  <div class="card-header text-center"><h3  style="color:rgb(187, 19, 159)">{{name}}</h3></div>
+  <div class="card-body text-center">
+    <h6 class="card-title"><strong>{{version}}</strong></i></h6>
+    <p><i>{{description}}</i></p>
+  </div>
+  </div>
+     {{#each functions}}
+  
+  <div class="card text-bg-secondary">
+  <div class="card-header text-center"><h3  style="color:rgb(34, 202, 84)">{{name}}</h3></div>
+  <div class="card-body text-center">
+    <h6 class="card-title"><strong>{{description}}</strong></i></h6>
+  </div>
+  </div>
+   {{#each parameters}}
+     <div class="card text-bg-info">
+  <div class="card-header text-center"><h3  style="color:rgb(152, 202, 34)">{{name}}</h3></div>
+  <div class="card-body text-center">
+    <p><i>{{type}}</i></p>
+    <p><i>{{description}}</i></p>
+    {{/each}}
+    {{/each}}
+   </div>
+</div>
+ 
+{{/each}}
+  {{/with}}
+
+</div> --}}
  <h1 style="color:brown">Web</h1>
+<div class="row">
+  {{#with web}}
+       {{#each languages}} 
+
+
+       <div class="col-6 g-2">
+          <div class="list-group">
+         
+<div class="list-group-item text-bg-danger">
+  <h3  style="color:rgb(255, 102, 0)">{{name}}</h3>
+
+<div class="list-group-item text-bg-info"> 
+  <strong>{{version}}</strong>
+  </div>
+<div class="list-group-item text-bg-warning">
+  <i>{{description}}</i>
+  </div>
+
+  {{#each elements}}
+  <div class="list-group-item text-bg-dark">{{name}}</div>
+    <div class="list-group-item text-bg-secondary">
+      <i>{{description}}</i>
+    </div>
+
+  {{#each attributes}}
+  <div class="list-group-item text-bg-dark">{{name}}</div>
+    <div class="list-group-item text-bg-secondary">
+      <i>{{description}}</i>
+    </div>
+  {{/each}}
+   {{/each}}
+</div>
+          </div>
+       </div>
+
+       <div class="col-6 g-2">
+        <div class="list-group">
+  {{#each properties}}
+ 
+  <div class="list-group-item text-bg-danger">
+    <h3  style="color:rgb(4, 53, 18)">{{name}}</h3>
+       <i>{{description}}</i>
+      {{#each values}}
+    </div> 
+  <div class="list-group-item text-bg-dark">{{value}}</div>
+  <div class="list-group-item text-bg-secondary">
+    <i>{{description}}</i>
+  </div>
+
+  {{/each}}
+  {{/each}}
+ </div>
+       </div>
+    
+
+<div class="col-6 g-2">
+ {{#each functions}}
+<div class="list-group">
+<div class="list-group-item text-bg-danger"><h3  style="color:rgb(34, 15, 2)">{{name}}</h3></div>
+<div class="list-group-item text-bg-warning"><i>{{description}}</i></div>
+  {{#each parameters}}
+<div class="list-group-item text-bg-dark">{{name}}</div>
+  <div class="list-group-item text-bg-secondary"><i>{{type}}</i></div>
+<div class="list-group-item text-bg-secondary"><i>{{description}}</i></div>
+{{/each}}
+{{/each}}
+</div>
+</div>
+
+</div>
+
+
+
+
+  
+
+
+
+  
+   {{/each}}
+     {{/with}}
+   </div>
+
+
+
+
+
+ {{!-- <h1 style="color:brown">Web</h1>
    <div>
      {{#with web}}
        {{#each languages}}
@@ -20,8 +191,8 @@
        </ul>
     </div>
       <div>
-       <ul>
-           {{#each properties}}
+       <ul> --}}
+           {{!-- {{#each properties}}
            <li> {{name}}</li>
            <i>{{description}}</i>
      <hr>
@@ -51,4 +222,4 @@
        </div>
      {{/each}}
    {{/with}}
-  </div> 
+  </div>  --}}
