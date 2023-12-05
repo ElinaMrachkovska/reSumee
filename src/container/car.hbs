@@ -1,109 +1,364 @@
- <h1>Car</h1>
-   <div><ul>
-      <li>{{make}}</li>
-      {{model}}<br>
-      {{year}}<br>
-      {{color}} <br>
-      <h3>FEATURES</h3>
-    <ul> {{#with features}}
-     <b>Interior</b>
-     <ul>{{#with interior}}<br>
-      <span style="border: 1px solid red">Seats</span>
-     <ul> {{#with seats}}<br>
-      <li>{{material}}</li>
-       <li>{{color}}</li>
-      <li>{{heated}}</li>
-       <li>{{ventilated}}</li>
-      {{/with}}</ul> 
-      
-     <span style="border: 1px solid red">Dashboard</span>
-     <ul>  {{#with dashboard}}<br>
-      <li>{{material}}</li>
-     <li> {{color}}</li></ul> 
-      <span style="border: 1px solid red">Display</span>
-      <br>
-     <ul>  {{#with display}}<br>
-      <li>{{type}}</li>
-      <li> {{size}}</li>
-       <li>{{resolution}}</li>
-       <li>{{touchscreen}}</li>
-        {{/with}}</ul> 
-        {{/with}}
-        <span style="border: 1px solid red">Audio</span>
-    <ul>  {{#with audio}}<br>
-      <li>{{system}}</li><br>
-      <li> {{subwoofer}}</li>
-      <li> {{bluetooth}}</li>
-      <li> {{USB}}</li><br>
-       {{/with}}</ul> 
-       {{/with}}</ul> 
-       {{/with}}
+ <div class="row">
+   <h1>Car</h1>
+<div class="list-group ">
+<div class="list-group-item display-5 text-bg-danger ">{{make}}</div>
+     <div class="list-group-item display-6 text-bg-secondary"> {{model}}</div>
+     <div class="list-group-item text-bg-secondary">{{year}}</div> 
+      <div class="list-group-item text-bg-secondary">{{color}}</div>
+        <div class="list-group-item text-bg-primary text-center"> <h3>FEATURES</h3>
+ {{#with features}}
+ <div class="row">
+<div class="col-6 mb-2">
+        
+   
+      <div class="list-group ">
+      <div class="list-group-item text-bg-info"> <h4>Interior</h4>
+    
+        {{#with interior}}
+        <div class="list-group-item text-bg-secondary"><span>Seats</span></div>
+     {{#with seats}}
+     
+       <table class="table table-stiped table-bordered text-bg-success">
+<thead>
+  <tr>
+    <th>material</th>
+    <th>color</th>
+     <th>heated</th>
+     <th>ventilated</th>
+       </tr>
+</thead>
 
-<b>Exterior</b><br>
-<ul> {{#with exterior}}
-  <i><b>Wheels</b></i><br>
-     <ul>{{#with wheels}}<br>
-      <li>{{size}}</li>
-     <li> {{type}}</li>
-     <li> {{color}}</li>
-     {{/with}}
-    <ul>  {{#with headlights}}<br>
-      </li>{{type}}</li><br>
-      </li>{{brightness}}</li><br>
-     </li> {{automatic}}</li><br>
-      {{/with}}</ul> 
-      <ul> {{#with sunroof}}<br>
-      </li>{{type}}</li><br>
-      </li> {{size}}</li>
-       </li>{{automatic}}</li><br>
-       {{/with}}</ul> 
-     {{/with}}</ul> 
-     <i><b>Safety</b></i><br>
-    <ul>  {{#with safety}}<br>
-     <b>Airbags</b><br>
-     <ul> {{#with airbags}}<br>
-    </li> {{front}}<br>
-     </li>  {{side}}<br>
-     </li> {{knee}}<br>
-      </li> {{rear}}<br>
-        {{/with}}</ul> </ul> 
-        <b>Аssistance</b><br>
-         <ul>   {{#with assistance}}<br>
-     </li>{{ blind_spot_monitoring }} <br>
-    </li>  {{rear_cross_traffic_alert}}<br>
-     </li> {{lane_departure_warning}}<br>
-     </li>  {{adaptive_cruise_control}}<br>
-      </li> {{collision_warning}}<br>
-        {{/with}}</ul> 
- {{/with}}</ul></ul>
-<i><b>ENGINE</b></i><br>
-   <ul> {{#with engine}}
-      {{type}}<br>
-      {{displacement}}<br>
-      {{horsepower}}<br>
-      {{torque}}<br>
-  <i><b>Transmission</b></i><br>
-    <ul>  {{#with transmission}}
-      {{type}}<br>
-       {{gears}}<br>
-     {{/with}}</ul> 
-     {{/with}}</ul> 
-     <i><b>Fuel economy</b></i><br>
-    <ul>  {{#with fuel_economy}}
-      {{city}}<br>
-      {{highway}}<br>
-      {{combined}}<br>
-      {{/with}}</ul> 
-   <i><b>Price</b></i><br>
-   <ul>  {{#with price}}
-    {{base}}<br>
-           {{destination}}<br>
-            <i><b>Options</b></i><br>
-     <ul>  {{#with options}}
-        {{navigation}}<br>
-        {{moonroof}}<br>
-        {{premium_paint}}<br>
-      {{/with}}</ul> 
-     <span style="color: rgb(158, 47, 19); border: 1px solid green; font-size: 20px"> {{total}}</span> <br>
-     {{/with}}</ul>    
+<tbody>
+  <tr>
+    <th>{{material}}</th>
+    <td>{{color}}</td>
+    <td>{{#if heated}}{{/if}}</td>
+     <td>{{#if ventilated}} {{/if}}</td>
+  </tr>
+</tbody></table> 
+    {{/with}}
+<div class="list-group-item text-bg-secondary"><span>Dashboard</span></div>
+     {{#with dashboard}}
+     
+       <table class="table table-stiped table-bordered text-bg-success">
+<thead>
+  <tr>
+    <th>material</th>
+    <th>color</th>
+         </tr>
+</thead>
+
+<tbody>
+  <tr>
+    <th>{{material}}</th>
+    <td>{{color}}</td>
+   </tr>
+</tbody></table> 
+    
+
+    <div class="list-group-item text-bg-secondary"><span>Display</span></div>
+     {{#with display}}
+     
+       <table class="table table-stiped table-bordered text-bg-success">
+<thead>
+  <tr>
+    <th>type</th>
+    <th>size</th>
+      <th>resolution</th>
+    <th>touchscreen</th>
+         </tr>
+</thead>
+
+<tbody>
+  <tr>
+    <td>{{type}}</td>
+    <td>{{size}}</td>
+    <td>{{resolution}}</td>
+    <td>{{touchscreen}}</td>
+   </tr>
+</tbody></table> 
+    {{/with}}
+    {{/with}}
+       <div class="list-group-item text-bg-secondary"><span>Audio</span></div>
+     {{#with audio}}
+     
+       <table class="table table-stiped table-bordered text-bg-success">
+<thead>
+  <tr>
+    <th>system</th>
+    <th>subwoofer</th>
+      <th>bluetooth</th>
+    <th>USB</th>
+         </tr>
+</thead>
+
+<tbody>
+  <tr>
+    <td>{{system}}</td>
+    <td>{{subwoofer}}</td>
+    <td>{{bluetooth}}</td>
+    <td>{{touchscreen}}</td>
+   </tr>
+</tbody></table> 
+    {{/with}}
+    {{/with}}
+      </div>
+      </div>
+      </div>
+         
+<div class="col-6 mb-2">
+    
+      <div class="list-group ">
+      <div class="list-group-item text-bg-info"> <h4>Exterior</h4>
+    
+        {{#with exterior}}
+        <div class="list-group-item text-bg-secondary"><span>Wheels</span></div>
+     {{#with wheels}}
+     
+       <table class="table table-stiped table-bordered text-bg-success">
+<thead>
+  <tr>
+    <th>size</th>
+    <th>type</th>
+     <th>color</th>
+     </tr>
+</thead>
+
+<tbody>
+  <tr>
+    <td>{{size}}</td>
+    <td>{{type}}</td>
+    <td>{{color}}</td>
+        </tr>
+</tbody></table> 
+    {{/with}}
+<div class="list-group-item text-bg-secondary"><span>Headlights</span></div>
+         {{#with headlights}}
+     
+       <table class="table table-stiped table-bordered text-bg-success">
+<thead>
+  <tr>
+    <th>type</th>
+    <th>brightness</th>
+     <th>automatic</th>
+     </tr>
+</thead>
+
+<tbody>
+  <tr>
+    <td>{{type}}</td>
+    <td>{{brightness}}</td>
+    <td>{{automatic}}</td>
+        </tr>
+</tbody></table> 
+    {{/with}}
+    <div class="list-group-item text-bg-secondary"><span>Sunroof</span></div>
+         {{#with sunroof}}
+     
+       <table class="table table-stiped table-bordered text-bg-success">
+<thead>
+  <tr>
+    <th>type</th>
+    <th>size</th>
+     <th>automatic</th>
+     </tr>
+</thead>
+
+<tbody>
+  <tr>
+    <td>{{type}}</td>
+    <td>{{brightness}}</td>
+    <td>{{automatic}}</td>
+        </tr>
+</tbody></table> 
+    {{/with}}
+    {{/with}}
+
+      </div>
+       </div>
+       </div>
+
+<div class="col-6">
+    
+      <div class="list-group ">
+      <div class="list-group-item text-bg-info"> <h4>Safety</h4>
+    
+        {{#with safety}}
+        <div class="list-group-item text-bg-secondary"><span>Airbags</span></div>
+     {{#with airbags}}
+     
+       <table class="table table-stiped table-bordered text-bg-success">
+<thead>
+  <tr>
+    <th>front</th>
+    <th>side</th>
+     <th>knee</th>
+     <th>rear</th>
+     </tr>
+</thead>
+
+<tbody>
+  <tr>
+    <td>{{front}}</td>
+    <td>{{side}}</td>
+    <td>{{knee}}</td>
+    <td>{{rear}}</td>
+        </tr>
+</tbody></table> 
+   {{/with}}
+
+       <div class="list-group-item text-bg-secondary"><span>Аssistance</span></div>
+         {{#with assistance}}
+       <table class="table table-stiped text-bg-sm table-bordered text-bg-success">
+<thead>
+  <tr>
+    <th>blind spot monitoring</th>
+    <th>rear cross traffic alert</th>
+     <th>lane departure warning</th>
+     <th>adaptive cruise control</th>
+      <th>collision warning</th>
+     </tr>
+</thead>
+
+<tbody>
+  <tr>
+    <td>{{#if blind_spot_monitoring}}✔{{/if}}</td>
+    <td>{{#if rear_cross_traffic_alert}}✔{{/if}}</td>
+    <td>{{#if lane_departure_warning}}✔{{/if}}</td>
+    <td>{{#if adaptive_cruise_control}}✔{{/if}}</td>
+    <td>{{#if collision_warning}}✔{{/if}}</td>
+  </tr>
+</tbody></table>
+    {{/with}}
+   
+
        
+ {{/with}}
+ </div>
+       </div>
+       </div>
+ 
+       <div class="col-6">
+        
+
+      <div class="list-group ">
+      <div class="list-group-item text-bg-info"> <h4>Technic Characteristics</h4>
+    
+        {{#with engine}}
+        <div class="list-group-item text-bg-secondary"><span>Engine</span></div>
+       
+       <table class="table table-stiped table-bordered text-bg-success">
+<thead>
+  <tr>
+    <th>type</th>
+    <th>displacement</th>
+     <th>horsepower</th>
+     <th>torque</th>
+       </tr>
+</thead>
+
+<tbody>
+  <tr>
+    <th>{{type}}</th>
+    <td>{{displacement}}</td>
+    <td>{{horsepower}}</td>
+     <td>{{torque}} </td>
+  </tr>
+</tbody></table> 
+ 
+    {{#with transmission}}
+        <div class="list-group-item text-bg-secondary"><span>Transmission</span></div>
+       
+       <table class="table table-stiped table-bordered text-bg-success">
+<thead>
+  <tr>
+    <th>type</th>
+    <th>gears</th>
+          </tr>
+</thead>
+<tbody>
+  <tr>
+    <th>{{type}}</th>
+    <td>{{gears}}</td>
+      </tr>
+</tbody></table> 
+    {{/with}}
+   {{/with}} 
+ </div>
+
+       </div>
+       </div>
+       
+        <div class="col-6">
+   {{#with fuel_economy}}
+        <div class="list-group-item text-bg-secondary"><span>Fuel economy</span>
+       
+       <table class="table table-stiped table-bordered text-bg-success">
+<thead>
+  <tr>
+    <th>city</th>
+    <th>highway</th>
+    <th>combined</th>
+  </th>
+</thead>
+<tbody>
+  <tr>
+    <td>{{city}}</td>
+    <td>{{highway}}</td>
+    <td>{{combined}}</td>
+  </th>
+</tr>
+</tbody></table> 
+    {{/with}}
+</div>
+</div>
+</div>
+      
+<div class="col-6">
+   {{#with price}}
+        <div class="list-group-item text-bg-secondary"><span>Price </span>
+       
+       <table class="table table-stiped table-bordered text-bg-success">
+<thead>
+  <tr>
+    <th>base</th>
+    <th>destination</th>
+              </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>{{base}}</td>
+    <td>{{destination}}</td>
+          </tr>
+</tbody></table> 
+  {{#with options}}
+        <div class="list-group-item text-bg-secondary"><span>Options </span></div>
+       
+       <table class="table table-stiped table-bordered text-bg-success">
+<thead>
+  <tr>
+    <th>navigation</th>
+    <th>moonroof</th>
+    <th>premium_paint</th>
+              </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>{{navigation}}</td>
+    <td>{{moonroof}}</td>
+    <td>{{premium_paint}}</td>
+          </tr>
+</tbody></table> 
+    {{/with}}
+ 
+
+    <div class="list-group-item text-bg-secondary" style="color: rgb(158, 47, 19); border: 1px solid green; font-size: 20px"> {{total}}</div>
+           {{/with}}
+     </div>
+     </div>
+     </div>
+         {{/with}}
+         
+       </div>
+       </div>
+    </div>

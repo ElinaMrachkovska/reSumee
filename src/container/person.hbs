@@ -1,97 +1,103 @@
-<div>
-   {{#with person}}
-   <div>
-    <h1>{{name}}</h1>
-    <div> 
-          
-         <div>   <h3>Person</h3>
-            {{name}}
-            <br> 
-             {{age}} 
-             <br> 
-             {{gender}}
-                    <h3>Address</h3> 
-             {{#with address}}
-             {{street}}<br>
-             {{city}}<br>
-             {{state}}<br>
-             {{zip}}<br>
-             {{country}}<br>
-             {{/with}}
-         </div>
-         <hr>
-     <div>
-        <h3>Education</h3>    
-        <ul>
-             {{#each education}}
-             <li>{{degree}}</li>
-             <li>{{major}}</li>
-            <li>{{university}}</li>
-            <li>{{graduationYear}}</li>
-             {{/each}}
-             </ul>
-     </div>
-     <hr>
+  
+  
+
+      <div class="card">
+         {{#with person}}
+   <div class="card-header text-bg-primary">
+    <div class="display-6"><b>{{name}}</b></div>
+     <div class="card-body mb-2">
+   <p> {{age}}  / {{gender}} </p>
+    
+         {{#with address}}
+
+<ul class="list-group mb-2">
+<li class="list-group-item text-bg-secondary"><h3>Address</h3></li>
+<li class="list-group-item">{{street}}</li>
+<li class="list-group-item">{{city}}</li>
+<li class="list-group-item">{{state}}</li>
+<li class="list-group-item">{{zip}}</li>
+<li class="list-group-item">{{country}}</li>
+{{/with}}</ul>
+    
+     <div class="list-group mb-2">
+<div class="list-group-item text-bg-warning"><h4>Education</h4> </div>
+{{#each education}}
+<div class="list-group-item ">{{degree}}</div>
+<div class="list-group-item">{{major}}</div>
+<div class="list-group-item">{{university}}</div>
+<div class="list-group-item">{{graduationYear}}</div>
+{{/each}}
+</div>  
+      <div class="list-group mb-2">
+<div class="list-group-item text-bg-success"><h4>WorkExperience</h4> </div>
+{{#each workExperience}}
+<div class="list-group-item ">{{company}}</div>
+<div class="list-group-item">{{title}}</div>
+<div class="list-group-item">{{startDate}}</div>
+<div class="list-group-item">{{endDate}}</div>
+ <div class="list-group mb-2 ms-3">
+   <div class="list-group-item text-bg-info"><strong>Responsibilities: </strong></div>
+<div class="list-group-item">{{year_founded}}</div>
+<div class="list-group-item">{{industry}}</div>
+</div>
+<div class="list-group mb-2 ms-3">
+   <div class="list-group-item text-bg-info"><strong>Employees: </strong></div>
+   {{#each employees}}
+<div class="list-group-item">{{name}}</div>
+<div class="list-group-item">{{position}}</div>
+<div class="list-group-item">{{department}}</div>
+<div class="list-group mb-2 ms-3">
+   <div class="list-group-item text-bg-info"><strong>Projects: </strong></div>
+  {{#each projects}}
+<div class="list-group-item">{{name}}</div>
+<div class="list-group-item">{{description}}</div>
+<div class="list-group-item">{{status}}</div>
+<div class="list-group mb-2 ms-3">
+   <div class="list-group-item text-bg-info"><strong>Teams: </strong></div>
+  {{#each teams}}
+<div class="list-group-item">{{team_name}}</div>
+<div class="list-group mb-2 ms-3">
+   <div class="list-group-item text-bg-info"><strong>Team_leader: </strong></div>
+  {{#with team_leader}}
+<div class="list-group-item">{{name}}</div>
+<div class="list-group-item">{{title}}</div>
+<div class="list-group-item">{{email}}</div>
+{{/with}}
+</div>
+<div class="list-group mb-2 ms-3">
+   <div class="list-group-item text-bg-info"><strong>Team_members: </strong></div>
+ {{#each team_members}}
+<div class="list-group-item">{{name}}</div>
+<div class="list-group-item">{{title}}</div>
+<div class="list-group-item">{{email}}</div>
+<div class="list-group-item">{{skills}}</div>
+<div class="list-group mb-2 ms-3">
+   <div class="list-group-item text-bg-info"><strong>Projects: </strong></div>
+ {{#each projects}}
+<div class="list-group-item">{{name}}</div>
+<div class="list-group-item">{{description}}</div>
+<div class="list-group-item">{{technologies}}</div>
+
+<div class="list-group mb-2 ms-3">
+   <div class="list-group-item text-bg-info"><strong>Team_members: </strong></div>
+ {{#each team_members}}
+<div class="list-group-item">{{name}}</div>
+<div class="list-group-item">{{title}}</div>
+{{/each}}
+
+   </div>
+   {{/each}}
+</div>
+{{/each}}
+</div>
+{{/each}}
+</div>
+{{/each}}
+</div>
+{{/each}}
+</div>  
+{{/each}}
       <div>
-        <h3>WorkExperience</h3>  
-        {{#each workExperience}}
-            {{company}}<br>
-            {{title}}<br>
-            {{startDate}}<br>
-            {{endDate}}<br>
-            <strong>Responsibilities: </strong>{{responsibilities}}<br>
-            {{year_founded}}<br>
-            {{industry}}<br>
-               <strong>Employees: </strong>     
-             {{#each employees}}
-              <ul>
-             <li>{{name}}</li>
-             <li>{{position}}</li>
-            <li>{{department}}</li>
-           <li> <strong>Projects: </strong>  </li>
-           </ul>
-             {{#each projects}}
-             
-            {{name}}<br>
-             {{description}}<br>
-            {{status}}<br>
-            <strong>Teams:</strong>
-             {{#each teams}}<br>
-             {{team_name}}
-            <ul><li><i>Team_leader</i></li>
-           {{#with team_leader}}
-              {{name}}<br>
-              {{title}}<br>
-              {{email}}<br>
-              {{/with}}
-             <li><i>Team_members:</i></li>
-           {{#each team_members}}<br>
-              {{name}}<br>
-              {{title}}<br>
-              {{email}}<br>
-               {{skills}}<br>
-             <li>  <i>Projects:</i></li>
-              {{#each projects}}<br>
-              {{name}}<br>
-              {{description}}<br>
-              {{technologies}}<br>
-             <li><i>Team_members:</i></li>
-               <ul> {{#each team_members}}
-                <li>{{name}}</li>
-              <li>{{title}}</li>
-              {{/each}}
-              </ul>
-              </ul>
-             {{/each}}
-            {{/each}}
-              
-            
-        {{/each}}
-        {{/each}}
-        {{/each}}
         
-     </div>
-        {{/each}}
-    </div>
-       {{/with}}
+     {{/with}}
 </div>  

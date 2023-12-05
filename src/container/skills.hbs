@@ -3,41 +3,70 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
 
-<div>
+<div class="row g-2">
+
   {{#with main}}
-    <main>
-      <section>
+    <main class="col-12">
+    
+      <div class="row">
+      <section class="col-6 m-1">
         {{>title data="All skills"}}
         {{>title big=istrue}}
-          <ul>
-            {{#each skills}}
-            <li>
-             {{name}}
-             {{#if point includeZero=true}} {{point}} {{/if}}
-             {{#if isTop}} (top) {{/if}}
 
-             {{#unless point includeZero=true}} (не вивчаємо) {{/unless}}
+
+<table class="table table-stiped table-bordered ">
+<thead class="text-bg-danger">
+  
+  <tr>
+    <th> Slills    </th>
+    <th>Point </th>
+     <th>Top </th>
+  </tr>
+</thead>
+
+<tbody>  {{#each skills}}
+  <tr>
+  
+    <td>{{name}}</td>
+    <td>{{#if point includeZero=true}} {{point}} {{/if}}</td>
+    <td>{{#if isTop}} (top) {{/if}}
+      {{#unless point includeZero=true}} (не вивчаємо) {{/unless}}
              {{#unless point}}
              {{#if point includeZero=true}}
              (вивчаємо)
              {{/if}}
-             {{/unless}}
-        </li>
-        {{/each}}
-      </ul>
+             {{/unless}}</td>
+             {{/each}}
+  </tr>
+</tbody></table>
       </section>
-      <section>
+          
+      <section class="col-5 m-1">
 {{>title data="My hobbies"}}
 {{>title big=isfalse}}
-<ul>
-            {{#each hobbies}}
-            <li>
-             {{name}} {{isMain}} 
-             {{#if isMain includeZero=true}} (favorite) {{/if}}
-             </li>
-        {{/each}}
-      </ul>
+<table class="table table-stiped table-bordered ">
+<thead class="text-bg-info">
+  
+  <tr>
+    <th> Hobby    </th>
+    <th>Favorite </th>
+    
+  </tr>
+</thead>
+
+<tbody>  {{#each hobbies}}
+  <tr>
+  
+    <td>{{name}}</td>
+    <td>{{isMain}} 
+             {{#if isMain includeZero=true}} (favorite) {{/if}}</td>
+    </tr>
+             {{/each}}
+  
+</tbody></table>
+            
       </section>
+      </div>
       </main>
       {{/with}}
     </div>

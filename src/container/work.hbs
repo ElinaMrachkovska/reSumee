@@ -3,72 +3,63 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
 
-<div>
+<div class="row">
     {{#with main}}
         <main>
-        <section>
-{{>title data="work history" big=true}}
-            <div>
-                <ul>
-                  {{#each works}}
-                    <li>
-                      <div>{{position}}</div>
-                      <br>
-
-                      <div>{{duration.from}} -                        - 
+            <div class="col-6">
+              {{>title data="work history" big=true}}
+<div class="alert alert-warning mb-2">
+                {{#each works}}
+                    
+                     <div class="alert alert-title text-bg-danger">{{position}}</div>
+                     <hr>
+                       <div>{{duration.from}} -                       
                         {{#if duration.to}} 
                         {{duration.to}} 
-                        {{else}} (працюю досі)
+                        {{else}} (Працюю досі)</div>
                          {{/if}}
-                         </div>
-
-                         <div> {{#if company.url}}
-                        {{>link text=company.name href=company.url blank=true noLine=true}}
+                         <button class="btn btn-warning m-2">{{#if company.url}}
+                        {{>link text=company.name href=company.url blank=true noLine=true}}</button>
                         {{else}}
                         <b>{{company.name}}</b>
-                        {{/if}}
-                        </div>
-                      <br>
-                      <div><strong>Projects({{projectAmount}})</strong> </div>
-                   
-                    <br>
-                    <ul>
+                        {{/if}}</button>
+ </div>
+ </div>
+
+        
+             <div class="col-6">
+                
+               <div class="alert alert-success mb-2">
+                   <div class="alert alert-title text-bg-secondary"><strong>Projects ({{projectAmount}})</strong> </div>
+                     <hr>
+                    
                         {{#each projects}}
-                        <li> 
-                          <div>{{name}}</div>
-                         <div>{{> link text=name href=url blank=true noline=true}}</div>
-                          <br> 
-                          <p>{{about}}</p>
-                          <br>
-                        {{/each}}
-                       
-                    <br>
-                         <em>Project stacks</em>
-                         ({{stackAmount}})
-                         {{#each stacks}} <br>
-                           {{name}}
-                           {{/each}}
-                           
-                            <em>Project awards</em>
-                           ({{awardAmount}})
-                            {{#each awards}} 
-                            {{name}} <br>
-                            {{/each}}
-                                                     </li>
-                         </ul>
+                 <button class="btn btn-light" href="{{url}}">{{name}}</button><br>
                          
-                        </div>
-                        </li>
-                        
-            {{/each}}
-                  </ul>
+   <label class="form-label">{{about}} ({{stackAmount}})</label>
+ {{#each stacks}}
+  <div class="form-check"> 
+       <label class="form-check-label"> <em>{{name}}</em></label>
+          <input name="food" type="checkbox" class="form-check-input">
+                           {{/each}}
+                    
+                         <em>Project awards ({{awardAmount}})</em>
+                           <div class="card">
+  <div class="card-body">
+                            <h4>{{#each awards}} </h4>
+                            {{name}} 
+                            {{/each}}  {{/each}}
+                             {{/each}}
+                            </div>
+                           </div>
+                           
+                             </div>
+                           </div>
+       </div>
+                 
         </section>
        </main>
        
     {{/with}}
 </div>
 
-{{!-- 
-    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
-    Адже наш layout/default.hbs має вже структуру HTML
---}}
